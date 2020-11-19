@@ -1,0 +1,131 @@
+.content {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    font: lato;
+}
+
+.text-area{
+    overflow-y: scroll;
+    padding: 32px 72px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100vw - 225px);
+}
+
+.row {
+    padding: 0px;
+    margin: 0px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content-area .h3{
+    font-size: 20px !important;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+    padding-right: 36px;
+    min-width: 250px;
+}
+
+.example-area {
+    margin-top: 56px;
+    margin-bottom: 72px;
+    padding-left: 36px;
+    z-index: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    bottom: 0px;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    justify-content: start;
+    flex: 1 1 0px;
+    min-width: 250px;
+}
+
+.highlight{
+    border: 0px;
+    margin: 16px;
+    background-color: var(--grey200);
+    max-height: 50vh;
+    overflow: auto;
+    width: inherit;
+    font-size: 15px;
+}
+
+.highlight code{
+    font-family: Source Code Pro;
+}
+
+.example{
+    top: 0px;
+    bottom: 0px;
+    max-height: inherit;
+    background-color: var(--grey200);
+    max-height: 70vh;
+    min-width: 250px;
+    width: inherit;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.scroll {
+    max-height: inherit;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 1400px){
+    .showing-nav .text-area{
+        width: calc(100vw - 225px);
+    }
+    .text-area{
+        width: calc(100vw - 72px);
+    }
+}
+
+@media (max-width: 1024px) {
+    /* CSS that should be displayed if width is equal to or less than 1000px goes here */
+    .example-area {
+        position: inherit;
+        margin-top: 56px;
+        margin-bottom: 72px;
+        padding-left: 0;
+        z-index: 1;
+        top: 0px;
+        bottom: 0px;
+        display: flex;
+        align-self: flex-start;
+        flex-direction: column;
+        justify-content: start;
+        flex: 1 1 0px;
+        width: 100%;
+    }
+    .row {
+        padding: 0px;
+        margin: 0px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: stretch;
+        width: 100%;
+    }
+    .content-area {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0px;
+        padding-right: 0;
+        width: 100%;
+    }
+}

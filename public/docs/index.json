@@ -1,0 +1,96 @@
+[
+    
+    
+    {
+        "url": "/docs/getting-started/index.json",
+        "title": "Quick Start",
+        "content": ""
+    }
+    
+    , 
+    {
+        "url": "/docs/use-exisitng-data/index.json",
+        "title": "Use Existing Data",
+        "content": ""
+    }
+    
+    , 
+    {
+        "url": "/docs/security/index.json",
+        "title": "Security",
+        "content": ""
+    }
+    
+    ,
+    
+    
+    {
+        "url": "/docs/security/data-source/doc/",
+        "title": "At the data source",
+        "content": "{row-divider}\nContent structure Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n{row-divider}\nSidebar category indexing Clyde indexes the first level of the sidebar manu by looking for type: product.\nBy default, we use feather icons, and the icon renders as specified by icon: \u0026quot;icon-layers\u0026quot;\nThe example provided is consistent with this example project.\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---     The code snippet is pulled from this page\n{row-divider}\nSidebar sub-category indexing Clyde indexes the second level of the sidebar manu by looking for type: docs.\nThe layout: two-col specifies the layout of the document.\nThere is also the layout: single-col for a single column layout.\nThe ordering of the menu items can be found from weight: 1\n{divider}  Meta     ---title:\u0026#34;Directory Structure\u0026#34;weight:1draft:falselastmod:2020-11-5# search related keywordstype:docslayout:two-col---     The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/security/search-endpoint/doc/",
+        "title": "At the search endpoint",
+        "content": "{row-divider}\nContent structure Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n{row-divider}\nSidebar category indexing Clyde indexes the first level of the sidebar manu by looking for type: product.\nBy default, we use feather icons, and the icon renders as specified by icon: \u0026quot;icon-layers\u0026quot;\nThe example provided is consistent with this example project.\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---     The code snippet is pulled from this page\n{row-divider}\nSidebar sub-category indexing Clyde indexes the second level of the sidebar manu by looking for type: docs.\nThe layout: two-col specifies the layout of the document.\nThere is also the layout: single-col for a single column layout.\nThe ordering of the menu items can be found from weight: 1\n{divider}  Meta     ---title:\u0026#34;Directory Structure\u0026#34;weight:1draft:falselastmod:2020-11-5# search related keywordstype:docslayout:two-col---     The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/getting-started/intro/doc/",
+        "title": "Introduction",
+        "content": ""
+    }
+    
+    , 
+    {
+        "url": "/docs/use-exisitng-data/retrofit-a-data-explorer/doc/",
+        "title": "Retrofit data explorers",
+        "content": "{row-divider}\nMSSNG Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/use-exisitng-data/tables-in-a-bucket/doc/",
+        "title": "Tables-in-a-bucket",
+        "content": "{row-divider}\nPhenopackets example Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n{row-divider}\nKidsfirst FHIR example Clyde indexes the first level of the sidebar manu by looking for type: product.\nBy default, we use feather icons, and the icon renders as specified by icon: \u0026quot;icon-layers\u0026quot;\nThe example provided is consistent with this example project.\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---     The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/use-exisitng-data/using-preso/doc/",
+        "title": "Using Presto",
+        "content": "{row-divider}\ndbGaP GECCO Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/getting-started/provision-data/doc/",
+        "title": "Provision Data",
+        "content": "{row-divider}\nContent structure Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n{row-divider}\nSidebar category indexing Clyde indexes the first level of the sidebar manu by looking for type: product.\nBy default, we use feather icons, and the icon renders as specified by icon: \u0026quot;icon-layers\u0026quot;\nThe example provided is consistent with this example project.\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---     The code snippet is pulled from this page\n{row-divider}\nSidebar sub-category indexing Clyde indexes the second level of the sidebar manu by looking for type: docs.\nThe layout: two-col specifies the layout of the document.\nThere is also the layout: single-col for a single column layout.\nThe ordering of the menu items can be found from weight: 1\n{divider}  Meta     ---title:\u0026#34;Directory Structure\u0026#34;weight:1draft:falselastmod:2020-11-5# search related keywordstype:docslayout:two-col---     The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/getting-started/consume-data/doc/",
+        "title": "Consume Data",
+        "content": "{row-divider}\nContent structure Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n{row-divider}\nSidebar category indexing Clyde indexes the first level of the sidebar manu by looking for type: product.\nBy default, we use feather icons, and the icon renders as specified by icon: \u0026quot;icon-layers\u0026quot;\nThe example provided is consistent with this example project.\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---     The code snippet is pulled from this page\n{row-divider}\nSidebar sub-category indexing Clyde indexes the second level of the sidebar manu by looking for type: docs.\nThe layout: two-col specifies the layout of the document.\nThere is also the layout: single-col for a single column layout.\nThe ordering of the menu items can be found from weight: 1\n{divider}  Meta     ---title:\u0026#34;Directory Structure\u0026#34;weight:1draft:falselastmod:2020-11-5# search related keywordstype:docslayout:two-col---     The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/getting-started/upload-results/doc/",
+        "title": "Upload results",
+        "content": "{row-divider}\nContent structure Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page\n{row-divider}\nSidebar category indexing Clyde indexes the first level of the sidebar manu by looking for type: product.\nBy default, we use feather icons, and the icon renders as specified by icon: \u0026quot;icon-layers\u0026quot;\nThe example provided is consistent with this example project.\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---     The code snippet is pulled from this page\n{row-divider}\nSidebar sub-category indexing Clyde indexes the second level of the sidebar manu by looking for type: docs.\nThe layout: two-col specifies the layout of the document.\nThere is also the layout: single-col for a single column layout.\nThe ordering of the menu items can be found from weight: 1\n{divider}  Meta     ---title:\u0026#34;Directory Structure\u0026#34;weight:1draft:falselastmod:2020-11-5# search related keywordstype:docslayout:two-col---     The code snippet is pulled from this page\n"
+    }
+    
+    , 
+    {
+        "url": "/docs/index.json",
+        "title": "Docs",
+        "content": ""
+    }
+    
+]

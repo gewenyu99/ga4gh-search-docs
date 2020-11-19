@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/docs/security/data-source/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/security/search-endpoint/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/getting-started/intro/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/use-exisitng-data/tables-in-a-bucket/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/use-exisitng-data/using-preso/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/getting-started/provision-data/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/use-exisitng-data/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/getting-started/consume-data/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/security/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/getting-started/upload-results/doc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+  </url>
+  
+</urlset>
