@@ -89,7 +89,10 @@ Content structure Clyde focuses on good, readable, responsive documentation. It&
       <guid>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/doc/</guid>
       <description>{row-divider}
 Queries The Search API supports query operation through SQL statements.
-The GA4GH Search API’s SQL dialect has been selected for compatibility with current major open source database platforms including Presto SQL, PostgreSQL, and MySQL, as well as BigQuery. There are occasional name or signature differences, but a GA4GH Search API implementation atop any of the major database platforms should be able to pass through queries that use the functions listed below with only minor tweaks.</description>
+The GA4GH Search API&amp;rsquo;s SQL dialect has a famililar interface insipired by current major open source database platforms including Presto SQL, PostgreSQL, and MySQL, as well as BigQuery. If you have prior experience with these database platforms, you&amp;rsquo;ll feel right at home with only minor adjustments.
+Supported SQL functions
+Supported SQL grammar
+{divider}  Example #1 Example #2   This query returns all female patients from the patient table.</description>
     </item>
     
     <item>

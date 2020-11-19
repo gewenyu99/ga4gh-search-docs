@@ -210,7 +210,7 @@
             <p class="boxtext"></p>
 <h4 id="queries">Queries</h4>
 <p>The Search API supports query operation through SQL statements.</p>
-<p>The GA4GH Search API’s SQL dialect has been selected for compatibility with current major open source database platforms including Presto SQL, PostgreSQL, and MySQL, as well as BigQuery. There are occasional name or signature differences, but a GA4GH Search API implementation atop any of the major database platforms should be able to pass through queries that use the functions listed below with only minor tweaks.</p>
+<p>The GA4GH Search API&rsquo;s SQL dialect has a famililar interface insipired by current major open source database platforms including Presto SQL, PostgreSQL, and MySQL, as well as BigQuery. If you have prior experience with these database platforms, you&rsquo;ll feel right at home with only minor adjustments.</p>
 <p><a href="https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#sql-functions">Supported SQL functions</a></p>
 <p><a href="https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#appendix-a-sql-grammar">Supported SQL grammar</a></p>
 <p></p>
@@ -320,7 +320,7 @@
             <p class="boxtext"></p>
 <h4 id="issuing-queries-using-the-search-api">Issuing queries using the Search API</h4>
 <p>Search is a standard REST API. This means Search can be access through standard HTTP calls.</p>
-<p>While Search API can be navigated using programs like cURL or Postman, it is best accessed programmatically, as every query will return immediately with a next page link that you need to continually &lsquo;poll&rsquo; by fetching the page at the link.</p>
+<p>While Search API can be navigated using programs like cURL or Postman, it is best accessed programmatically. The results could return multiple pages, which is easier to navigate with programmatic access.</p>
 <p>Once you&rsquo;ve visited a page and consumed data from it, you can&rsquo;t go back to it or refresh.</p>
 <p>On the right, we provide examples to consume data from the Search API using the GA4GH Commandline Interface, the R client, Python, and cURL.</p>
 <blockquote>
