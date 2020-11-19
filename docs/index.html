@@ -167,10 +167,35 @@
 
 </div>
 
-<div class="content" id="content">
-<div >
-  <h2 class="page-beader">GA4GH Discovery Search API</h1>
+<div class="content" id="content"><div class="content-header">
+    <div id="search-input-div">
+        
+
+        <button class="search-button" id="search-button" data-toggle="modal" data-target="#search-input-modal" onclick='setFocusToTextBox()'>
+            <h3 class="search-button-text">
+                <i class="icon-search search-icon"></i>
+                Find anything
+            </h3>
+        </button>
+    
+        <div class="modal search" id="search-input-modal">
+            <div id="search-input-modal" class="modal-dialog">
+                <div id="search-input-div" class="modal-content">
+                    <input id="search-input" type="text" placeholder="" name="search" autocomplete="off">
+                    <span class="focus-border"></span>
+                    <section id="search-results" class="search"></section>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+</div><div class="text-area">
+<h2>GA4GH Discovery Search API</h2>
+
 </div>
+
 
         
         </div><script src="./js/jquery-3.5.1.min.js"></script>
