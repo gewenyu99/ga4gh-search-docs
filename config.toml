@@ -1,9 +1,12 @@
 baseURL = "http://example.org/"
+resourceDir = "ga4gh-search-docs"
 languageCode = "en-us"
 title = "GA4GH Discovery Search API"
 theme = "clyde"
 pygmentsUseClasses=true
 publishDir = "docs"
+relativeURLs = true
+
 
 [markup]
   [markup.goldmark]
