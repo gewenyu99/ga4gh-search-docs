@@ -65,6 +65,7 @@ Once you've visited a page and consumed data from it, you can't go back to it or
 
 On the right, we provide examples to consume data from the Search API using the GA4GH Commandline Interface, the R client, and cURL.
 
+> [Need help installing client libraries?](../../../../docs/getting-started/intro/doc/)
 
 {divider}
 {{<code/float-window>}}
@@ -137,7 +138,6 @@ curl --request POST \
 {{% /tab %}}
 {{< /tabs >}}
 {{</code/float-window>}}
-[Need help installing client libraries?](../../../../docs/getting-started/intro/doc/)
 
 
 
