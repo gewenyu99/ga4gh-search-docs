@@ -579,7 +579,7 @@ window.onload = function() {
     searchResults = document.getElementById('search-results')
 
     
-    fetch('/docs/index.json', {
+    fetch('/ga4gh-search-docs/docs/index.json', {
         method: 'get'
     }).then(
         res => res.json()
