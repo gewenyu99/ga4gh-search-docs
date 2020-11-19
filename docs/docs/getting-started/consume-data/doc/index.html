@@ -217,7 +217,6 @@
         </div>
         <div class="example-area">
             <div class="example">
-    <div class="scroll" id="scroll-wrap">
         
 <nav>
 	<div class="nav nav-tabs tabs-head" role="tablist">
@@ -305,7 +304,6 @@
 
 </div>
 
-    </div>
 </div></p>
 <p>
         </div>
@@ -325,11 +323,13 @@
 <p>While Search can be navigated using programs like cURL or Postman, it is best accessed programmatically, as every query will return immediately with a next page link that you need to continually &lsquo;poll&rsquo; by fetching the page at the link.</p>
 <p>Once you&rsquo;ve visited a page and consumed data from it, you can&rsquo;t go back to it or refresh.</p>
 <p>On the right, we provide examples to consume data from the Search API using the GA4GH Commandline Interface, the R client, and cURL.</p>
+<blockquote>
+<p><a href="../../../../docs/getting-started/intro/doc/">Need help installing client libraries?</a></p>
+</blockquote>
 <p></p>
         </div>
         <div class="example-area">
             <div class="example">
-    <div class="scroll" id="scroll-wrap">
         
 <nav>
 	<div class="nav nav-tabs tabs-head" role="tablist">
@@ -408,7 +408,16 @@
 <span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;DNAstack/ga4gh-search-client-r&#34;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># Making the request</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
-<span class="n">conditionsInFemalePatients</span> <span class="o">&lt;-</span> <span class="n">ga4gh.search</span><span class="o">::</span><span class="nf">ga4gh_search</span><span class="p">(</span><span class="s">&#34;https://search-presto-public.staging.dnastack.com&#34;</span><span class="p">,</span> <span class="s">&#34;select json_extract_scalar(ncpi_disease, &#39;$.code.text&#39;) as disease, json_extract_scalar(ncpi_disease, &#39;$.identifier[0].value&#39;) as identifier from kidsfirst.ga4gh_tables.ncpi_disease disease INNER JOIN kidsfirst.ga4gh_tables.patient patient ON patient.id=replace(json_extract_scalar(ncpi_disease, &#39;$.subject.reference&#39;), &#39;Patient/&#39;) WHERE json_extract_scalar(patient, &#39;$.gender&#39;)=&#39;female&#39; limit 5&#34;</span><span class="p">)</span>
+<span class="n">conditionsInFemalePatients</span> <span class="o">&lt;-</span> <span class="n">ga4gh.search</span><span class="o">::</span><span class="nf">ga4gh_search</span><span class="p">(</span><span class="s">&#34;https://search-presto-public.staging.dnastack.com&#34;</span><span class="p">,</span>
+  <span class="s">&#34;SELECT Json_extract_scalar(ncpi_disease, &#39;$.code.text&#39;)           AS disease, 
+</span><span class="s">          Json_extract_scalar(ncpi_disease, &#39;$.identifier[0].value&#39;) AS identifier 
+</span><span class="s">          FROM   kidsfirst.ga4gh_tables.ncpi_disease disease 
+</span><span class="s">          INNER JOIN kidsfirst.ga4gh_tables.patient patient 
+</span><span class="s">                  ON patient.id = REPLACE(Json_extract_scalar(ncpi_disease, 
+</span><span class="s">                                        &#39;$.subject.reference&#39;), 
+</span><span class="s">                                  &#39;Patient/&#39;) 
+</span><span class="s">WHERE  Json_extract_scalar(patient, &#39;$.gender&#39;) = &#39;female&#39; 
+</span><span class="s">LIMIT  5 &#34;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># View the results</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">conditionsInFemalePatients</span><span class="p">)</span>
 </code></pre></div><p>Output:</p>
@@ -488,9 +497,7 @@ This query returns all female patients from the <code>patient</code> table.</p>
 
 </div>
 
-    </div>
-</div>
-<a href="../../../../docs/getting-started/intro/doc/">Need help installing client libraries?</a></p>
+</div></p>
         </div>
     </div>
     

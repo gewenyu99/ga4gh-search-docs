@@ -58,10 +58,8 @@
     border: 0px;
     margin: 16px;
     background-color: var(--grey200);
-    max-height: 50vh;
-    overflow: auto;
-    width: inherit;
     font-size: 15px;
+    overflow: visible;
 }
 
 .highlight code{
@@ -79,7 +77,10 @@
     border-radius: 10px;
     margin-bottom: 16px;
 }
-
+.example pre {
+    background-color: inherit;
+    overflow: unset;
+}
 .scroll {
     max-height: inherit;
     overflow: auto;

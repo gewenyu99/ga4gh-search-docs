@@ -13,10 +13,6 @@
   justify-content: center;
 }
 
-pre{
-  background-color: var(--secondary);
-}
-
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
   padding: 12px!important;
   flex: 1;
