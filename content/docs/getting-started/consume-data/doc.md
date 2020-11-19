@@ -84,7 +84,16 @@ devtools::install_github("DNAstack/ga4gh-search-client-r")
 ```R
 # Making the request
 library(httr)
-conditionsInFemalePatients <- ga4gh.search::ga4gh_search("https://search-presto-public.staging.dnastack.com", "select json_extract_scalar(ncpi_disease, '$.code.text') as disease, json_extract_scalar(ncpi_disease, '$.identifier[0].value') as identifier from kidsfirst.ga4gh_tables.ncpi_disease disease INNER JOIN kidsfirst.ga4gh_tables.patient patient ON patient.id=replace(json_extract_scalar(ncpi_disease, '$.subject.reference'), 'Patient/') WHERE json_extract_scalar(patient, '$.gender')='female' limit 5")
+conditionsInFemalePatients <- ga4gh.search::ga4gh_search("https://search-presto-public.staging.dnastack.com",
+  "SELECT Json_extract_scalar(ncpi_disease, '$.code.text')           AS disease, 
+          Json_extract_scalar(ncpi_disease, '$.identifier[0].value') AS identifier 
+          FROM   kidsfirst.ga4gh_tables.ncpi_disease disease 
+          INNER JOIN kidsfirst.ga4gh_tables.patient patient 
+                  ON patient.id = REPLACE(Json_extract_scalar(ncpi_disease, 
+                                        '$.subject.reference'), 
+                                  'Patient/') 
+WHERE  Json_extract_scalar(patient, '$.gender') = 'female' 
+LIMIT  5 ")
 ```
 ```R
 # View the results
