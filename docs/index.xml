@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GA4GH Discovery Search API</title>
-    <link>http://example.org/</link>
+    <link>http://example.org/ga4gh-search-docs/</link>
     <description>Recent content on GA4GH Discovery Search API</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://example.org/ga4gh-search-docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>At the data source</title>
-      <link>http://example.org/docs/security/data-source/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/security/data-source/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/security/data-source/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/security/data-source/doc/</guid>
       <description>{row-divider}
 Content structure Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
@@ -19,10 +19,10 @@ Content structure Clyde focuses on good, readable, responsive documentation. It&
     
     <item>
       <title>At the search endpoint</title>
-      <link>http://example.org/docs/security/search-endpoint/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/security/search-endpoint/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/security/search-endpoint/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/security/search-endpoint/doc/</guid>
       <description>{row-divider}
 Content structure Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
@@ -30,19 +30,19 @@ Content structure Clyde focuses on good, readable, responsive documentation. It&
     
     <item>
       <title>Introduction</title>
-      <link>http://example.org/docs/getting-started/intro/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/getting-started/intro/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/getting-started/intro/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/intro/doc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Retrofit data explorers</title>
-      <link>http://example.org/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</guid>
       <description>{row-divider}
 MSSNG Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
@@ -50,10 +50,10 @@ MSSNG Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s 
     
     <item>
       <title>Tables-in-a-bucket</title>
-      <link>http://example.org/docs/use-exisitng-data/tables-in-a-bucket/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/tables-in-a-bucket/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/use-exisitng-data/tables-in-a-bucket/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/tables-in-a-bucket/doc/</guid>
       <description>{row-divider}
 Phenopackets example Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
@@ -61,10 +61,10 @@ Phenopackets example Clyde focuses on good, readable, responsive documentation. 
     
     <item>
       <title>Using Presto</title>
-      <link>http://example.org/docs/use-exisitng-data/using-preso/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/use-exisitng-data/using-preso/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</guid>
       <description>{row-divider}
 dbGaP GECCO Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
@@ -72,10 +72,10 @@ dbGaP GECCO Clyde focuses on good, readable, responsive documentation. It&amp;rs
     
     <item>
       <title>Provision Data</title>
-      <link>http://example.org/docs/getting-started/provision-data/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/getting-started/provision-data/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/doc/</guid>
       <description>{row-divider}
 Content structure Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
@@ -83,10 +83,10 @@ Content structure Clyde focuses on good, readable, responsive documentation. It&
     
     <item>
       <title>Consume Data</title>
-      <link>http://example.org/docs/getting-started/consume-data/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/getting-started/consume-data/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/doc/</guid>
       <description>{row-divider}
 Content structure Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
@@ -94,10 +94,10 @@ Content structure Clyde focuses on good, readable, responsive documentation. It&
     
     <item>
       <title>Upload results</title>
-      <link>http://example.org/docs/getting-started/upload-results/doc/</link>
+      <link>http://example.org/ga4gh-search-docs/docs/getting-started/upload-results/doc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/getting-started/upload-results/doc/</guid>
+      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/upload-results/doc/</guid>
       <description>{row-divider}
 Content structure Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |      The code snippet is pulled from this page</description>
