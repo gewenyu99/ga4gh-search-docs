@@ -1,0 +1,38 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "GA4GH Discovery Search API"
+theme = "clyde"
+pygmentsUseClasses=true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
+      
+[params]
+    company = "GA4GH Discovery Workstream"
+    #colors
+    secondary = "#1E1F21"
+    sidebar = "#9062a5"
+    primary = "#fff"
+    accent = "#8cc63e"
+    grey200 = "#F9F9FA"
+    grey600 = "#969DAC"
+    grey_head= "#EFEFF3"
+
+[outputs]
+    section = ["JSON", "HTML"]
