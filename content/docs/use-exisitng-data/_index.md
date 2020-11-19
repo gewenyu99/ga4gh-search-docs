@@ -1,6 +1,6 @@
 ---
 title: "Use Existing Data"
 icon: "icon-database"
-type : "product"
+type : "category"
 weight: 2
 ---

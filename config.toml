@@ -38,5 +38,7 @@ canonifyURLs = true
     grey600 = "#969DAC"
     grey_head= "#EFEFF3"
 
+    logo = "/images/logo.png"
+
 [outputs]
     section = ["JSON", "HTML"]

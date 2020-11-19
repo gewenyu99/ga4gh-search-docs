@@ -19,8 +19,8 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 140%;
-    padding: 8px 24px 8px 16px !important;
-    margin-left: 15px !important;
+    padding: 8px 24px 8px 17px !important;
+    margin-left: 14px !important;
     margin: 0px;
     color: inherit;
 }
@@ -101,11 +101,11 @@
 
 
 .sidebar-h2.nav-highlight.subitem{
-    border-left: 1px solid var(--accent);
+    border-left: 2px solid var(--accent);
 }
 
 .sidebar-h2.subitem{
-    border-left: 1px solid var(--primary);
+    border-left: 2px solid var(--primary);
 }
 
 #logo-collapse-btn {

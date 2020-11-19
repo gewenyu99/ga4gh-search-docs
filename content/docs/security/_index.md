@@ -1,6 +1,6 @@
 ---
 title: "Security"
 icon: "icon-shield"
-type : "product"
+type : "category"
 weight: 3
 ---

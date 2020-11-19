@@ -41,7 +41,7 @@
 </head><body><div class="sidebar" id="sidebar-nav">
     
 <button id="logo-collapse-btn" onclick="(function(){document.getElementById('sidebar-nav').classList.toggle('show');document.getElementById('content').classList.toggle('showing-nav')})()" >
-        <h3 id="title">GA4GH Discovery Search API</h3>
+        <img id="logo" src="../../../../images/logo.png" alt="GA4GH Discovery Search API"> 
     </button>
 
     
@@ -211,8 +211,8 @@
 <h4 id="queries">Queries</h4>
 <p>The Search API supports query operation through SQL statements.</p>
 <p>The GA4GH Search API’s SQL dialect has been selected for compatibility with current major open source database platforms including Presto SQL, PostgreSQL, and MySQL, as well as BigQuery. There are occasional name or signature differences, but a GA4GH Search API implementation atop any of the major database platforms should be able to pass through queries that use the functions listed below with only minor tweaks.</p>
-<p>Details of the supported SQL functions can be found here: <a href="https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#sql-functions">SQL functions</a></p>
-<p>Details of the supported SQL grammar can be found here: <a href="https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#appendix-a-sql-grammar">SQL grammar</a></p>
+<p><a href="https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#sql-functions">Supported SQL functions</a></p>
+<p><a href="https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#appendix-a-sql-grammar">Supported SQL grammar</a></p>
 <p></p>
         </div>
         <div class="example-area">
@@ -320,9 +320,9 @@
             <p class="boxtext"></p>
 <h4 id="issuing-queries-using-the-search-api">Issuing queries using the Search API</h4>
 <p>Search is a standard REST API. This means Search can be access through standard HTTP calls.</p>
-<p>While Search can be navigated using programs like cURL or Postman, it is best accessed programmatically, as every query will return immediately with a next page link that you need to continually &lsquo;poll&rsquo; by fetching the page at the link.</p>
+<p>While Search API can be navigated using programs like cURL or Postman, it is best accessed programmatically, as every query will return immediately with a next page link that you need to continually &lsquo;poll&rsquo; by fetching the page at the link.</p>
 <p>Once you&rsquo;ve visited a page and consumed data from it, you can&rsquo;t go back to it or refresh.</p>
-<p>On the right, we provide examples to consume data from the Search API using the GA4GH Commandline Interface, the R client, and cURL.</p>
+<p>On the right, we provide examples to consume data from the Search API using the GA4GH Commandline Interface, the R client, Python, and cURL.</p>
 <blockquote>
 <p><a href="../../../../docs/getting-started/intro/doc/">Need help installing client libraries?</a></p>
 </blockquote>
@@ -408,16 +408,7 @@
 <span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;DNAstack/ga4gh-search-client-r&#34;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># Making the request</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
-<span class="n">conditionsInFemalePatients</span> <span class="o">&lt;-</span> <span class="n">ga4gh.search</span><span class="o">::</span><span class="nf">ga4gh_search</span><span class="p">(</span><span class="s">&#34;https://search-presto-public.staging.dnastack.com&#34;</span><span class="p">,</span>
-  <span class="s">&#34;SELECT Json_extract_scalar(ncpi_disease, &#39;$.code.text&#39;)           AS disease, 
-</span><span class="s">          Json_extract_scalar(ncpi_disease, &#39;$.identifier[0].value&#39;) AS identifier 
-</span><span class="s">          FROM   kidsfirst.ga4gh_tables.ncpi_disease disease 
-</span><span class="s">          INNER JOIN kidsfirst.ga4gh_tables.patient patient 
-</span><span class="s">                  ON patient.id = REPLACE(Json_extract_scalar(ncpi_disease, 
-</span><span class="s">                                        &#39;$.subject.reference&#39;), 
-</span><span class="s">                                  &#39;Patient/&#39;) 
-</span><span class="s">WHERE  Json_extract_scalar(patient, &#39;$.gender&#39;) = &#39;female&#39; 
-</span><span class="s">LIMIT  5 &#34;</span><span class="p">)</span>
+<span class="n">conditionsInFemalePatients</span> <span class="o">&lt;-</span> <span class="n">ga4gh.search</span><span class="o">::</span><span class="nf">ga4gh_search</span><span class="p">(</span><span class="s">&#34;https://search-presto-public.staging.dnastack.com&#34;</span><span class="p">,</span> <span class="s">&#34;select json_extract_scalar(ncpi_disease, &#39;$.code.text&#39;) as disease, json_extract_scalar(ncpi_disease, &#39;$.identifier[0].value&#39;) as identifier from kidsfirst.ga4gh_tables.ncpi_disease disease INNER JOIN kidsfirst.ga4gh_tables.patient patient ON patient.id=replace(json_extract_scalar(ncpi_disease, &#39;$.subject.reference&#39;), &#39;Patient/&#39;) WHERE json_extract_scalar(patient, &#39;$.gender&#39;)=&#39;female&#39; limit 5&#34;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># View the results</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">conditionsInFemalePatients</span><span class="p">)</span>
 </code></pre></div><p>Output:</p>

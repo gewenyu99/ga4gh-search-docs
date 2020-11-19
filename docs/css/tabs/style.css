@@ -1,3 +1,8 @@
+nav{
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+
+}
 .nav.nav-tabs {
   display: flex;
   flex-direction: row;
@@ -35,7 +40,7 @@
 }
 
 .tab-content{
-  border-radius: 0px;
+  border-radius: inherit;
   background-color: var(--grey200);
   margin: 1px 0px;
 }
