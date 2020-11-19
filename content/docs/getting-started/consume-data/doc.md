@@ -67,7 +67,6 @@ On the right, we provide examples to consume data from the Search API using the 
 
 
 {divider}
-[Need help installing client libraries?](../../../../docs/getting-started/intro/doc/)
 {{<code/float-window>}}
 {{< tabs tabTotal="4" tabID="2" tabName1="R" tabName2="Python" tabName3="CLI" tabName4="cURL">}}
 {{% tab tabNum="1" %}}
@@ -138,6 +137,8 @@ curl --request POST \
 {{% /tab %}}
 {{< /tabs >}}
 {{</code/float-window>}}
+
+[Need help installing client libraries?](../../../../docs/getting-started/intro/doc/)
 
 
 
