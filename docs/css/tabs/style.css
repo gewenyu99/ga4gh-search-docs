@@ -41,9 +41,9 @@ pre{
 .tab-content{
   border-radius: 0px;
   background-color: var(--grey200);
+  margin: 1px 0px;
 }
 .tab-content>.tab-pane{
   border-radius: 0px;
   padding: 8px;
-  margin: 1px 0px;
 }

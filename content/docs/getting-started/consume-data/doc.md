@@ -137,7 +137,6 @@ curl --request POST \
 {{% /tab %}}
 {{< /tabs >}}
 {{</code/float-window>}}
-
 [Need help installing client libraries?](../../../../docs/getting-started/intro/doc/)
 
 

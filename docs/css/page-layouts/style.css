@@ -73,7 +73,7 @@
     bottom: 0px;
     max-height: inherit;
     background-color: var(--grey200);
-    max-height: 70vh;
+    max-height: 50vh;
     min-width: 250px;
     width: inherit;
     border-radius: 10px;
@@ -84,6 +84,10 @@
     max-height: inherit;
     overflow: auto;
     border-radius: 10px;
+}
+
+#scroll-wrap{
+    overflow: hidden;
 }
 
 @media (max-width: 1400px){
