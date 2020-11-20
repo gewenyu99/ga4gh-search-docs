@@ -72,13 +72,15 @@ On the right, we provide examples to consume data from the Search API using the 
 {{< tabs tabTotal="4" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI" tabName4="cURL">}}
 
 {{% tab tabNum="1" %}}
-[Follow Along in Google Colab](https://colab.research.google.com/drive/1Y6r1772AW-FWZ1OrOutNoDOvca8Osz3z?usp=sharing#scrollTo=gf_gkbuIGMDh)
-Installing the client library
+[Follow Along in Google Colab](https://colab.research.google.com/drive/1efGB5O68_dtMgyqCeIjLG8ezMzDBBQj9?usp=sharing)
 ```bash
+# Installing the client library form PyPi
+pip install search-python-client
+# Installing from Github
 pip install git+https://github.com/DNAstack/search-python-client --no-cache-dir
 ```
-Building the query
 ```python
+# Building the query
 from search_python_client.search import DrsClient, SearchClient
 base_url = 'https://search-presto-public.staging.dnastack.com'
 search_client = SearchClient(base_url=base_url)
@@ -94,14 +96,14 @@ WHERE  Json_extract_scalar(patient, '$.gender') = 'female'
 LIMIT  5 
 """
 ```
-Executing the query
 ```python
+# Executing the query
 table_data_iterator = search_client.search_table(query)
 for item in table_data_iterator:
   print(item)
 ```
-Results
 ```python
+# Results
 {'disease': 'Aortic atresia', 'identifier': 'Condition|SD_PREASA7S|272|Aortic atresia|None'}
 {'disease': 'Mitral atresia', 'identifier': 'Condition|SD_PREASA7S|272|Mitral atresia|None'}
 {'disease': 'Hypoplasia ascending aorta', 'identifier': 'Condition|SD_PREASA7S|272|Hypoplasia ascending aorta|None'}
