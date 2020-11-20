@@ -91,6 +91,11 @@
     overflow: hidden;
 }
 
+.content-textbox{
+    margin: 16px;
+    max-height: inherit;
+}
+
 @media (max-width: 1400px){
     .showing-nav .text-area{
         width: calc(100vw - 225px);

@@ -34,7 +34,10 @@ Content structure Clyde focuses on good, readable, responsive documentation. It&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/ga4gh-search-docs/docs/getting-started/intro/doc/</guid>
-      <description></description>
+      <description>{row-divider}
+The GA4GH Search API The GA4GH Search API specification describes a simple, uniform mechanism to publish, discover, query, and analyze biomedical data. Any “rectangular” data that fits into rows and columns can be represented by GA4GH Search.
+Search API for data custodians Search API is a perfect solution for data custodians looking to make their biomedical data discoverable and searchable.
+ The API is minimalistic by design, which also means minimal resistance to adopt.</description>
     </item>
     
     <item>
