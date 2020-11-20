@@ -1,5 +1,5 @@
 .sidebar-h1:hover {
-    color: var(--primary);
+    color: var(--sidebar-primary);
 }
 
 .sidebar-h1 {
@@ -28,8 +28,8 @@
 .sidebar {
     width: 225px;
     margin: 0;
-    background-color: var(--sidebar);
-    color: var(--primary);
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-primary);
     order: -1; /* default is 0 */
     overflow-y: hidden;
     flex-direction: column;
@@ -44,7 +44,7 @@
 }
 
 .sidebar-card {
-    background-color: var(--sidebar) !important;
+    background-color: var(--sidebar-bg) !important;
     border: 0px !important;
     overflow: auto;
     width: inherit;
@@ -72,7 +72,7 @@
 }
 
 .nav-link:hover{
-    color: var(--primary);
+    color: var(--sidebar-primary);
 }
 
 .nav-collapse{
@@ -91,12 +91,12 @@
 
 
 .nav-highlight{
-    color: var(--primary) !important;
+    color: var(--sidebar-primary) !important;
     
 }
 
 .nav-highlight.mainitem{
-    color: var(--primary) !important;
+    color: var(--sidebar-primary) !important;
 }
 
 
@@ -105,7 +105,7 @@
 }
 
 .sidebar-h2.subitem{
-    border-left: 2px solid var(--primary);
+    border-left: 2px solid var(--sidebar-primary);
 }
 
 #logo-collapse-btn {

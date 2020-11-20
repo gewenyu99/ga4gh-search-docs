@@ -28,8 +28,9 @@
             --white: #ffffff;
             --primary: #fff;
             --secondary: #1E1F21;
-            --sidebar: #9062a5;
-            --accent: #8cc63e;
+            --sidebar-bg: #f6f6f8;
+            --sidebar-primary: #1E1F21;
+            --accent: #e34a3a;
             --grey200: #F9F9FA;
             --grey600: #969DAC;
             --grey-head: #EFEFF3;
@@ -344,7 +345,7 @@
 		
 
 		<a class="nav-item nav-link content-tab active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
-		   aria-controls="nav-home" aria-selected="true">R</a>
+		   aria-controls="nav-home" aria-selected="true">Python</a>
 
 		
 		
@@ -356,7 +357,7 @@
 		
 
 		<a class="nav-item nav-link content-tab" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
-		   aria-controls="nav-home" aria-selected="false">Python</a>
+		   aria-controls="nav-home" aria-selected="false">R</a>
 
 		
 		
@@ -398,7 +399,51 @@
 
 
 
+
 <div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<p><a href="https://colab.research.google.com/drive/1Y6r1772AW-FWZ1OrOutNoDOvca8Osz3z?usp=sharing#scrollTo=gf_gkbuIGMDh">Follow Along in Google Colab</a>
+Installing the client library</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pip install git+https://github.com/DNAstack/search-python-client --no-cache-dir
+</code></pre></div><p>Building the query</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">search_python_client.search</span> <span class="kn">import</span> <span class="n">DrsClient</span><span class="p">,</span> <span class="n">SearchClient</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://search-presto-public.staging.dnastack.com&#39;</span>
+<span class="n">search_client</span> <span class="o">=</span> <span class="n">SearchClient</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">SELECT Json_extract_scalar(ncpi_disease, &#39;$.code.text&#39;)           AS disease, 
+</span><span class="s2">       Json_extract_scalar(ncpi_disease, &#39;$.identifier[0].value&#39;) AS identifier 
+</span><span class="s2">FROM   kidsfirst.ga4gh_tables.ncpi_disease disease 
+</span><span class="s2">       INNER JOIN kidsfirst.ga4gh_tables.patient patient 
+</span><span class="s2">               ON patient.id = REPLACE(Json_extract_scalar(ncpi_disease, 
+</span><span class="s2">                                       &#39;$.subject.reference&#39;), 
+</span><span class="s2">                               &#39;Patient/&#39;) 
+</span><span class="s2">WHERE  Json_extract_scalar(patient, &#39;$.gender&#39;) = &#39;female&#39; 
+</span><span class="s2">LIMIT  5 
+</span><span class="s2">&#34;&#34;&#34;</span>
+</code></pre></div><p>Executing the query</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">table_data_iterator</span> <span class="o">=</span> <span class="n">search_client</span><span class="o">.</span><span class="n">search_table</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">table_data_iterator</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div><p>Results</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="s1">&#39;disease&#39;</span><span class="p">:</span> <span class="s1">&#39;Aortic atresia&#39;</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">:</span> <span class="s1">&#39;Condition|SD_PREASA7S|272|Aortic atresia|None&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;disease&#39;</span><span class="p">:</span> <span class="s1">&#39;Mitral atresia&#39;</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">:</span> <span class="s1">&#39;Condition|SD_PREASA7S|272|Mitral atresia|None&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;disease&#39;</span><span class="p">:</span> <span class="s1">&#39;Hypoplasia ascending aorta&#39;</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">:</span> <span class="s1">&#39;Condition|SD_PREASA7S|272|Hypoplasia ascending aorta|None&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;disease&#39;</span><span class="p">:</span> <span class="s1">&#39;Hypoplastic left heart syndrome&#39;</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">:</span> <span class="s1">&#39;Condition|SD_PREASA7S|272|Hypoplastic left heart syndrome|None&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;disease&#39;</span><span class="p">:</span> <span class="s1">&#39;Hypoplastic left ventricle (subnormal cavity volume)&#39;</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">:</span> <span class="s1">&#39;Condition|SD_PREASA7S|272|Hypoplastic left ventricle (subnormal cavity volume)|None&#39;</span><span class="p">}</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<p><a href="https://colab.research.google.com/drive/1Y6r1772AW-FWZ1OrOutNoDOvca8Osz3z?usp=sharing">Follow Along in Google Colab</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># installing devtools</span>
@@ -429,19 +474,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
-
-	<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span> <span class="s2">&#34;Not documented, yet&#34;</span>
-</code></pre></div>
-
-</div>
 
 
 

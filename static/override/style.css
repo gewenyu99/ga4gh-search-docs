@@ -92,3 +92,10 @@ p {
     padding: 15px;
     color: var(--primary);
 }
+
+#logo{
+    margin-top: 24px;
+    margin-left: 20px;
+    height: 32px;
+    margin-bottom: 44px;
+}

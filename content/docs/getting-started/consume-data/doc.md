@@ -69,8 +69,48 @@ On the right, we provide examples to consume data from the Search API using the 
 
 {divider}
 {{<code/float-window>}}
-{{< tabs tabTotal="4" tabID="2" tabName1="R" tabName2="Python" tabName3="CLI" tabName4="cURL">}}
+{{< tabs tabTotal="4" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI" tabName4="cURL">}}
+
 {{% tab tabNum="1" %}}
+[Follow Along in Google Colab](https://colab.research.google.com/drive/1Y6r1772AW-FWZ1OrOutNoDOvca8Osz3z?usp=sharing#scrollTo=gf_gkbuIGMDh)
+Installing the client library
+```bash
+pip install git+https://github.com/DNAstack/search-python-client --no-cache-dir
+```
+Building the query
+```python
+from search_python_client.search import DrsClient, SearchClient
+base_url = 'https://search-presto-public.staging.dnastack.com'
+search_client = SearchClient(base_url=base_url)
+query = """
+SELECT Json_extract_scalar(ncpi_disease, '$.code.text')           AS disease, 
+       Json_extract_scalar(ncpi_disease, '$.identifier[0].value') AS identifier 
+FROM   kidsfirst.ga4gh_tables.ncpi_disease disease 
+       INNER JOIN kidsfirst.ga4gh_tables.patient patient 
+               ON patient.id = REPLACE(Json_extract_scalar(ncpi_disease, 
+                                       '$.subject.reference'), 
+                               'Patient/') 
+WHERE  Json_extract_scalar(patient, '$.gender') = 'female' 
+LIMIT  5 
+"""
+```
+Executing the query
+```python
+table_data_iterator = search_client.search_table(query)
+for item in table_data_iterator:
+  print(item)
+```
+Results
+```python
+{'disease': 'Aortic atresia', 'identifier': 'Condition|SD_PREASA7S|272|Aortic atresia|None'}
+{'disease': 'Mitral atresia', 'identifier': 'Condition|SD_PREASA7S|272|Mitral atresia|None'}
+{'disease': 'Hypoplasia ascending aorta', 'identifier': 'Condition|SD_PREASA7S|272|Hypoplasia ascending aorta|None'}
+{'disease': 'Hypoplastic left heart syndrome', 'identifier': 'Condition|SD_PREASA7S|272|Hypoplastic left heart syndrome|None'}
+{'disease': 'Hypoplastic left ventricle (subnormal cavity volume)', 'identifier': 'Condition|SD_PREASA7S|272|Hypoplastic left ventricle (subnormal cavity volume)|None'}
+```
+{{% /tab %}}
+
+{{% tab tabNum="2" %}}
 [Follow Along in Google Colab](https://colab.research.google.com/drive/1Y6r1772AW-FWZ1OrOutNoDOvca8Osz3z?usp=sharing)
 ```R
 # installing devtools
@@ -107,11 +147,8 @@ Output:
 5 Condition|SD_PREASA7S|272|Hypoplastic left ventricle (subnormal cavity volume)|None
 ```
 {{% /tab %}}
-{{% tab tabNum="2" %}}
-```python
-print "Not documented, yet"
-```
-{{% /tab %}}
+
+
 {{% tab tabNum="3" %}}
 
 ``` bash

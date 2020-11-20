@@ -31,9 +31,10 @@ canonifyURLs = true
     company = "GA4GH Discovery Workstream"
     #colors
     secondary = "#1E1F21"
-    sidebar = "#9062a5"
+    sidebar_bg = "#f6f6f8"
+    sidebar_primary = "#1E1F21"
     primary = "#fff"
-    accent = "#8cc63e"
+    accent = "#e34a3a"
     grey200 = "#F9F9FA"
     grey600 = "#969DAC"
     grey_head= "#EFEFF3"
