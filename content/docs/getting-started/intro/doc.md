@@ -29,7 +29,7 @@ Search API is a perfect solution for data consumers looking to discover and sear
 {{%content-textbox%}}
 ##### Quick Links
 ---
-[Full API Specifications](https://github.com/ga4gh-discovery/ga4gh-search)
+[Full API Specifications](/api)
 
 [Installing Client Libraries](#installing-client-libraries)
 
