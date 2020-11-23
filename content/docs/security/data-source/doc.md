@@ -5,86 +5,19 @@ draft: false
 lastmod: 2020-11-5
 # search related keywords
 type: docs
-layout: two-col
+layout: single-col
 ---
+#### Securing the Search data sources
+Search is backend agnostic by design, this means we do not suggest a specific implementation as correct. In this page, we will attempt to bring up some options for you to consider.
 
-{row-divider}
-#### Content structure
+##### Using access controls of the data source
+Whether you're data is stored in a database like MySQL and PostgreSQL, or in hosted solutions like Google Cloud Storage, the solution will likely offer some form of access control. The access control can be broad or fine grained extending to table/column/row level security. This is where your implementation will check the requesting user’s identity from their GA4GH Passport. 
 
-Clyde focuses on good, readable, responsive documentation. It's side bar indexes in only 2 levels. It's opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
+[Click me if you're not familiar with GA4GH Passports and Visas](https://github.com/ga4gh-duri/ga4gh-duri.github.io/tree/master/researcher_ids)
 
-{divider}
-{{<code/float-window>}}
-{{< tabs tabTotal="3" tabID="1" tabName1="Files">}}
-{{% tab tabNum="1" %}}
-``` yaml
-├── content
-│   ├── category folder
-│   │   ├── sub-category folder
-│   │   │   └──_index.md
-│   │   └── _index.md
-│   ├── another category 
-|
-```
-{{% /tab %}}
-{{< /tabs >}}
-{{</code/float-window>}}
-**The code snippet is pulled from this page**
 
-{row-divider}
+##### Using Presto’s system access control
+If your implementation uses Presto, you can use Preso's [system access control](https://prestodb.io/docs/current/security/built-in-system-access-control.html) to secure your data source.
 
-#### Sidebar category indexing
-
-Clyde indexes the first level of the sidebar manu by looking for `type: product`.
-
-By default, we use feather icons, and the icon renders as specified by `icon: "icon-layers"`
-
-The example provided is consistent with this example project.
-
-{divider}
-{{<code/float-window>}}
-{{< tabs tabTotal="3" tabID="1" tabName1="Meta">}}
-{{% tab tabNum="1" %}}
-``` yaml
----
-title: "Getting Started"
-icon: "icon-layers"
-type : "product"
----
-```
-{{% /tab %}}
-{{< /tabs >}}
-{{</code/float-window>}}
-**The code snippet is pulled from this page**
-
-{row-divider}
-
-#### Sidebar sub-category indexing
-
-Clyde indexes the second level of the sidebar manu by looking for `type: docs`.
-
-The `layout: two-col` specifies the layout of the document. 
-
-There is also the `layout: single-col` for a single column layout.
-
-The ordering of the menu items can be found from `weight: 1`
-
-{divider}
-{{<code/float-window>}}
-{{< tabs tabTotal="3" tabID="1" tabName1="Meta">}}
-{{% tab tabNum="1" %}}
-``` yaml
----
-title: "Directory Structure"
-weight: 1
-draft: false
-lastmod: 2020-11-5
-# search related keywords
-type: docs
-layout: two-col
----
-```
-{{% /tab %}}
-{{< /tabs >}}
-{{</code/float-window>}}
-**The code snippet is pulled from this page**
+##### Make a copy of your data
+If you plan to share a select set of data, you can also considering making a copy of all the shared data in a different database/storage instance. If the plan is to share a certain dataset publically, this is the best option to avoid implementing complicated filters.
