@@ -41,7 +41,7 @@ Search API is a perfect solution for data consumers looking to discover and sear
 
 {row-divider}
 ### Installing Client Libraries
-Search has client libraries for R and Python, as well as a command line interaface.
+Search has client libraries for R and Python, as well as a command line interaface. We'll be using these client libraries in the following examples.
 {divider}
 {{<code/float-window>}}
 {{< tabs tabTotal="3" tabID="1" tabName1="Python" tabName2="R" tabName3="CLI">}}
