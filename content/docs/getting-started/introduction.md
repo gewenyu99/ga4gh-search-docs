@@ -13,16 +13,16 @@ The GA4GH Search API specification describes a simple, uniform mechanism to publ
 
 #### Search API for data custodians
 Search API is a perfect solution for data custodians looking to make their biomedical data discoverable and searchable. 
-- The API is minimalistic by design, which also means minimal resistance to adopt.
-- Does not prescribe a particular data model. If it fits into rows and columns, you can publish it.
-- Search serves as a general-purpose framework for building federatable search-based applications across multiple implementations.
+- The API is minimalistic by design, which also means minimal resistance to adoption.
+- Search does not prescribe a particular data model. If it fits into rows and columns, you can publish it.
+- Search serves as a general-purpose framework for building federative search-based applications across multiple implementations.
 - Search is backend agnostic. It is possible to implement the API across a large variety of backend datastores.
 
 #### Search API for data consumers
 Search API is a perfect solution for data consumers looking to discover and search biomedical data in an interoperable way.
 - Search API is RESTful. Read our Open API 3 specification.
 - Search API is discoverable and browsable. [See supported table operations](https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#discovery-and-browsing)
-- Search API is queryable and familiar. Search API's SQL dialect has a famililar interface insipired by current major open source database platforms.
+- Search API is queryable and familiar. Search API's SQL dialect has a familiar interface inspired by current major open source database platforms.
 
 {divider}
 {{<code/float-window>}}
@@ -33,15 +33,15 @@ Search API is a perfect solution for data consumers looking to discover and sear
 
 [Installing Client Libraries](#installing-client-libraries)
 
-[Placeholder for custodian examples](https://github.com/ga4gh-discovery/ga4gh-search)
+[Publishing Data Examples](/docs/getting-started/provision-data/)
 
-[Data Consumption Examples](https://github.com/ga4gh-discovery/ga4gh-search)
+[Data Consumption Examples](/docs/getting-started/consume-data/)
 {{%/content-textbox%}}
 {{</code/float-window>}}
 
 {row-divider}
 ### Installing Client Libraries
-Search has client libraries for R and Python, as well as a command line interaface. We'll be using these client libraries in the following examples.
+Search has client libraries for R and Python, as well as a command-line interface. We’ll be using these client libraries in the following examples.
 {divider}
 {{<code/float-window>}}
 {{< tabs tabTotal="3" tabID="1" tabName1="Python" tabName2="R" tabName3="CLI">}}

@@ -14,7 +14,7 @@ description: This section provides information about setting up GA4GH Search API
 
 The Search API supports query operation through SQL statements.
 
-The GA4GH Search API's SQL dialect has a famililar interface insipired by current major open source database platforms including Presto SQL, PostgreSQL, and MySQL, as well as BigQuery. If you have prior experience with these database platforms, you'll feel right at home with only minor adjustments.
+The GA4GH Search API's SQL dialect has a familiar interface inspired by current major open source database platforms, including Presto SQL, PostgreSQL, MySQL, and BigQuery. If you have prior experience with these database platforms, you'll feel right at home with only minor adjustments.
 
 [Supported SQL functions](https://github.com/ga4gh-discovery/ga4gh-search/blob/develop/SEARCHSPEC.md#sql-functions)
 
@@ -57,7 +57,7 @@ LIMIT  5;
 
 #### Issuing queries using the Search API
 
-Search is a standard REST API. This means Search can be access through standard HTTP calls.
+Search is a standard REST API. This means Search can be accessed through standard HTTP calls.
 
 While Search API can be navigated using programs like cURL or Postman, it is best accessed programmatically. The results could return multiple pages, which is easier to navigate with programmatic access.
 

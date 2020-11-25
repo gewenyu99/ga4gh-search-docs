@@ -108,28 +108,28 @@
     <div class="collapse ">
         <div class="nav-list">
             
-                <a class="nav-link" href="../../docs/getting-started/intro/doc/"> 
+                <a class="nav-link" href="../../docs/getting-started/introduction/"> 
                     <h3 class="sidebar-h2  subitem" 
                     id="">
                         Introduction
                     </h3>
                 </a>
             
-                <a class="nav-link" href="../../docs/getting-started/provision-data/doc/"> 
+                <a class="nav-link" href="../../docs/getting-started/provision-data/"> 
                     <h3 class="sidebar-h2  subitem" 
                     id="">
                         Provision Data
                     </h3>
                 </a>
             
-                <a class="nav-link" href="../../docs/getting-started/consume-data/doc/"> 
+                <a class="nav-link" href="../../docs/getting-started/consume-data/"> 
                     <h3 class="sidebar-h2  subitem" 
                     id="">
                         Consume Data
                     </h3>
                 </a>
             
-                <a class="nav-link" href="../../docs/getting-started/upload-results/doc/"> 
+                <a class="nav-link" href="../../docs/getting-started/upload-result/"> 
                     <h3 class="sidebar-h2  subitem" 
                     id="">
                         Upload results
@@ -189,14 +189,14 @@
     <div class="collapse show">
         <div class="nav-list">
             
-                <a class="nav-link" href="../../docs/security/data-source/doc/"> 
+                <a class="nav-link" href="../../docs/security/data-source/"> 
                     <h3 class="sidebar-h2 nav-highlight subitem" 
                     id="scrollto">
                         At the data source
                     </h3>
                 </a>
             
-                <a class="nav-link" href="../../docs/security/search-endpoint/doc/"> 
+                <a class="nav-link" href="../../docs/security/search-endpoint/"> 
                     <h3 class="sidebar-h2  subitem" 
                     id="">
                         At the search endpoint
@@ -237,14 +237,14 @@
 </div><div class="text-area">
 <h2>At the data source</h2>
 <h4 id="securing-the-search-data-sources">Securing the Search data sources</h4>
-<p>Search is backend agnostic by design, this means we do not suggest a specific implementation as correct. In this page, we will attempt to bring up some options for you to consider.</p>
+<p>Search is backend agnostic by design; this means we do not suggest a specific implementation as correct. On this page, we will attempt to bring up some options for you to consider.</p>
 <h5 id="using-access-controls-of-the-data-source">Using access controls of the data source</h5>
-<p>Whether you&rsquo;re data is stored in a database like MySQL and PostgreSQL, or in hosted solutions like Google Cloud Storage, the solution will likely offer some form of access control. The access control can be broad or fine grained extending to table/column/row level security. This is where your implementation will check the requesting user’s identity from their GA4GH Passport.</p>
-<p><a href="https://github.com/ga4gh-duri/ga4gh-duri.github.io/tree/master/researcher_ids">Click me if you&rsquo;re not familiar with GA4GH Passports and Visas</a></p>
+<p>Whether your data is stored in a database like MySQL and PostgreSQL, or hosted solutions like Google Cloud Storage, the database will likely offer some form of access control. The access control can be broad or fine-grained, extending to table/column/row-level security. Your implementation can leverage the database&rsquo;s access controls to implement GA4GH Passport and Visas to secure your data.</p>
+<p><a href="https://github.com/ga4gh-duri/ga4gh-duri.github.io/tree/master/researcher_ids">Not familiar with GA4GH Passports and Visas?</a></p>
 <h5 id="using-prestos-system-access-control">Using Presto’s system access control</h5>
-<p>If your implementation uses Presto, you can use Preso&rsquo;s <a href="https://prestodb.io/docs/current/security/built-in-system-access-control.html">system access control</a> to secure your data source.</p>
+<p>If your implementation uses Presto, you can use Presto&rsquo;s <a href="https://prestodb.io/docs/current/security/built-in-system-access-control.html">system access control</a> to secure your data source.</p>
 <h5 id="make-a-copy-of-your-data">Make a copy of your data</h5>
-<p>If you plan to share a select set of data, you can also considering making a copy of all the shared data in a different database/storage instance. If the plan is to share a certain dataset publically, this is the best option to avoid implementing complicated filters.</p>
+<p>If you plan to share a select set of data, you can consider making a copy of all the shared data in a different database/storage instance. Not having sensitive data in your shared data source at all is the most secure solution. If the plan is to share a specific dataset publicly, this is the best option to avoid implementing complicated filters.</p>
 
 </div>
 </div>
