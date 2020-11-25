@@ -3,6 +3,7 @@ run: build_api_docs
 	hugo serve -D
 
 build_search_docs: build_api_docs
+	rm -r docs/
 	cp -r ga4gh-search/docs content/api
 	hugo --minify
 

@@ -1,113 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>GA4GH Discovery Search API</title>
-    <link>http://example.org/ga4gh-search-docs/</link>
-    <description>Recent content on GA4GH Discovery Search API</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/ga4gh-search-docs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>At the data source</title>
-      <link>http://example.org/ga4gh-search-docs/docs/security/data-source/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/security/data-source/</guid>
-      <description>Securing the Search data sources Search is backend agnostic by design; this means we do not suggest a specific implementation as correct. On this page, we will attempt to bring up some options for you to consider.
-Using access controls of the data source Whether your data is stored in a database like MySQL and PostgreSQL, or hosted solutions like Google Cloud Storage, the database will likely offer some form of access control.</description>
-    </item>
-    
-    <item>
-      <title>At the search endpoint</title>
-      <link>http://example.org/ga4gh-search-docs/docs/security/search-endpoint/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/security/search-endpoint/</guid>
-      <description>Securing the Search endpoint The endpoint should be secured according to the GA4GH Passports and Visas standard as suggested by the GA4GH Data Use and Researcher ID workstream.</description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>http://example.org/ga4gh-search-docs/docs/getting-started/introduction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/introduction/</guid>
-      <description>{row-divider}
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GA4GH Discovery Search API</title><link>http://example.org/ga4gh-search-docs/</link><description>Recent content on GA4GH Discovery Search API</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://example.org/ga4gh-search-docs/index.xml" rel="self" type="application/rss+xml"/><item><title>At the data source</title><link>http://example.org/ga4gh-search-docs/docs/security/data-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/security/data-source/</guid><description>Securing the Search data sources Search is backend agnostic by design; this means we do not suggest a specific implementation as correct. On this page, we will attempt to bring up some options for you to consider.
+Using access controls of the data source Whether your data is stored in a database like MySQL and PostgreSQL, or hosted solutions like Google Cloud Storage, the database will likely offer some form of access control.</description></item><item><title>At the search endpoint</title><link>http://example.org/ga4gh-search-docs/docs/security/search-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/security/search-endpoint/</guid><description>Securing the Search endpoint The endpoint should be secured according to the GA4GH Passports and Visas standard as suggested by the GA4GH Data Use and Researcher ID workstream.</description></item><item><title>Introduction</title><link>http://example.org/ga4gh-search-docs/docs/getting-started/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/getting-started/introduction/</guid><description>{row-divider}
 The GA4GH Search API The GA4GH Search API specification describes a simple, uniform mechanism to publish, discover, query, and analyze biomedical data. Any “rectangular” data that fits into rows and columns can be represented by GA4GH Search.
 Search API for data custodians Search API is a perfect solution for data custodians looking to make their biomedical data discoverable and searchable.
- The API is minimalistic by design, which also means minimal resistance to adoption.</description>
-    </item>
-    
-    <item>
-      <title>Retrofit data explorers</title>
-      <link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</guid>
-      <description>{row-divider}
+The API is minimalistic by design, which also means minimal resistance to adoption.</description></item><item><title>Retrofit data explorers</title><link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</guid><description>{row-divider}
 MSSNG We&amp;rsquo;re working on it!
-{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page</description>
-    </item>
-    
-    <item>
-      <title>Tables-in-a-bucket</title>
-      <link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/tables-in-a-bucket/doc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/tables-in-a-bucket/doc/</guid>
-      <description>{row-divider}
+{divider} Files ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category | The code snippet is pulled from this page</description></item><item><title>Tables-in-a-bucket</title><link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/tables-in-a-bucket/doc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/tables-in-a-bucket/doc/</guid><description>{row-divider}
 Phenopackets example We&amp;rsquo;re working on it!
-{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page
+{divider} Files ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category | The code snippet is pulled from this page
 {row-divider}
 Kidsfirst FHIR example We&amp;rsquo;re working on it!
-{divider}  Meta     ---title:&amp;#34;Getting Started&amp;#34;icon:&amp;#34;icon-layers&amp;#34;type :&amp;#34;product&amp;#34;---    The code snippet is pulled from this page</description>
-    </item>
-    
-    <item>
-      <title>Using Presto</title>
-      <link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</guid>
-      <description>{row-divider}
+{divider} Meta ---title:&amp;#34;Getting Started&amp;#34;icon:&amp;#34;icon-layers&amp;#34;type :&amp;#34;product&amp;#34;--- The code snippet is pulled from this page</description></item><item><title>Using Presto</title><link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</guid><description>{row-divider}
 dbGaP GECCO We&amp;rsquo;re working on it!
-{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page</description>
-    </item>
-    
-    <item>
-      <title>Provision Data</title>
-      <link>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</guid>
-      <description>{row-divider}
+{divider} Files ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category | The code snippet is pulled from this page</description></item><item><title>Provision Data</title><link>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</guid><description>{row-divider}
 Implementation The GA4GH API requires the table operations to be implemented to specification for basic discovery and browsing.
 Optional but not required, query operations may be implemented to support querying with SQL.
-The Search API is backend agnostic, which means any solution that implements the API Specification is valid. You can use your favorite REST application frameworks to implement GA4GH Search or write no code at all with a tables-in-a-bucket implementation.</description>
-    </item>
-    
-    <item>
-      <title>Consume Data</title>
-      <link>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/</guid>
-      <description>{row-divider}
+The Search API is backend agnostic, which means any solution that implements the API Specification is valid. You can use your favorite REST application frameworks to implement GA4GH Search or write no code at all with a tables-in-a-bucket implementation.</description></item><item><title>Consume Data</title><link>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/</guid><description>{row-divider}
 Queries The Search API supports query operation through SQL statements.
 The GA4GH Search API&amp;rsquo;s SQL dialect has a familiar interface inspired by current major open source database platforms, including Presto SQL, PostgreSQL, MySQL, and BigQuery. If you have prior experience with these database platforms, you&amp;rsquo;ll feel right at home with only minor adjustments.
 Supported SQL functions
 Supported SQL grammar
-{divider}  Example #1 Example #2   This query returns all female patients from the patient table.</description>
-    </item>
-    
-    <item>
-      <title>Upload results</title>
-      <link>http://example.org/ga4gh-search-docs/docs/getting-started/upload-result/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/ga4gh-search-docs/docs/getting-started/upload-result/</guid>
-      <description>{row-divider}
-We&amp;rsquo;re working on it!</description>
-    </item>
-    
-  </channel>
-</rss>
+{divider} Example #1 Example #2 This query returns all female patients from the patient table.</description></item><item><title>Upload results</title><link>http://example.org/ga4gh-search-docs/docs/getting-started/upload-result/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/getting-started/upload-result/</guid><description>{row-divider}
+We&amp;rsquo;re working on it!</description></item></channel></rss>
