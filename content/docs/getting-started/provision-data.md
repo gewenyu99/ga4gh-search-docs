@@ -32,47 +32,7 @@ The following examples will get you started experimenting with Search.
 #### Tables-in-a-bucket example
 The specification allows for a no-code implementation as a collection of files served statically. This is the easiest way to start experimenting with the GA4GH Search API. As long as your storage bucket conforms to the correct file structure and it has the correct sharing permissions, it is a valid Search implementation.
 
-A concrete example implementation is [available here](https://storage.googleapis.com/ga4gh-tables-example/tables).
-
-Test the implementation out:
-{{< tabs tabTotal="3" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI">}}
-{{% tab tabNum="1" %}}
-[Follow along in Colab](https://colab.research.google.com/drive/1NytWLzQFWwGc3pqTaL0HD81S5B3zznLj?usp=sharing)
-``` python
-# init search client
-from search_python_client.search import DrsClient, SearchClient
-base_url_tiab = 'https://storage.googleapis.com/ga4gh-tables-example/'
-search_client_tiab = SearchClient(base_url=base_url_tiab)
-# get tables
-tables_iterator = search_client_tiab.get_table_list()
-tables = [next(tables_iterator, None) for i in range(10)]
-tables = list(filter(None, tables))
-print(tables)
-# get table info
-table_name = tables[0]['name']
-table_info = search_client_tiab.get_table_info(table_name)
-print(table_info)
-# get table data
-table_name = tables[0]['name']
-table_data_iterator = search_client_tiab.get_table_data(table_name)
-table_data = [next(table_data_iterator, None) for i in range(10)]
-table_data = list(filter(None, table_data))
-print(table_data)
-```
-{{% /tab %}}
-{{% tab tabNum="2" %}}
-``` 
-https://colab.research.google.com/drive/1VOP2IcPjsX4U-DfuiTs7Tr0SVlAD0IMh?usp=sharing <= doesn't work right now.
-```
-{{% /tab %}}
-{{% tab tabNum="3" %}}
-``` 
-place holder
-```
-{{% /tab %}}
-
-{{< /tabs >}}
-
+A concrete example implementation is [available here](https://storage.googleapis.com/ga4gh-tables-example/tables) and [try browsing this implementation](/docs/getting-started/consume-data/#browsing) here.
 
 {divider}
 {{<code/float-window>}}

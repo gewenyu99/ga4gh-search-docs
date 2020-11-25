@@ -8,6 +8,49 @@ type: docs
 layout: two-col
 description: This section provides information about setting up GA4GH Search API to expose data.
 ---
+{row-divider}
+#### Browsing
+The minimum Search API implementations will support browsing by table. This means [these operations](https://gewenyu99.github.io/ga4gh-search-docs/api/#tag/tables) from the API specs are supported for table by table browsing.
+
+On the right is example code to browse [this](/docs/getting-started/provision-data/#tables-in-a-bucket-example) tablles-in-a-bucket implementation of Search.
+{divider}
+{{< tabs tabTotal="3" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI">}}
+{{% tab tabNum="1" %}}
+[Follow along in Colab](https://colab.research.google.com/drive/1NytWLzQFWwGc3pqTaL0HD81S5B3zznLj?usp=sharing)
+``` python
+# init search client
+from search_python_client.search import DrsClient, SearchClient
+base_url_tiab = 'https://storage.googleapis.com/ga4gh-tables-example/'
+search_client_tiab = SearchClient(base_url=base_url_tiab)
+# get tables
+tables_iterator = search_client_tiab.get_table_list()
+tables = [next(tables_iterator, None) for i in range(10)]
+tables = list(filter(None, tables))
+print(tables)
+# get table info
+table_name = tables[0]['name']
+table_info = search_client_tiab.get_table_info(table_name)
+print(table_info)
+# get table data
+table_name = tables[0]['name']
+table_data_iterator = search_client_tiab.get_table_data(table_name)
+table_data = [next(table_data_iterator, None) for i in range(10)]
+table_data = list(filter(None, table_data))
+print(table_data)
+```
+{{% /tab %}}
+{{% tab tabNum="2" %}}
+``` 
+https://colab.research.google.com/drive/1VOP2IcPjsX4U-DfuiTs7Tr0SVlAD0IMh?usp=sharing <= doesn't work right now.
+```
+{{% /tab %}}
+{{% tab tabNum="3" %}}
+``` 
+place holder
+```
+{{% /tab %}}
+
+{{< /tabs >}}
 
 {row-divider}
 #### Queries
@@ -179,8 +222,8 @@ curl --request POST \
 {{</code/float-window>}}
 
 {row-divider}
-#### More Examples
-### dbGaP GECCO Example
+## More Examples
+#### dbGaP GECCO Example
 This is a public implementation of Search. Feel free to follow along with the examples and explore this endpoint with your own script.
 {{< tabs tabTotal="3" tabID="3" tabName1="Python" tabName2="R" tabName3="CLI">}}
 {{% tab tabNum="1" %}}
@@ -231,7 +274,7 @@ Under Development
 {{< /tabs >}}
 
 {divider}
-
+#
 ##### COVID Cloud Example
 This is a public implementation of Search. It is connected to multiple sources of data related to COVID19, such as data from [USA Facts](https://usafacts.org/issues/coronavirus/) used in this example.
 {{< tabs tabTotal="3" tabID="4" tabName1="Python" tabName2="R" tabName3="CLI">}}
