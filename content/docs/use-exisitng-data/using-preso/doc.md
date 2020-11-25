@@ -11,7 +11,7 @@ layout: two-col
 {row-divider}
 #### dbGaP GECCO
 
-Clyde focuses on good, readable, responsive documentation. It's side bar indexes in only 2 levels. It's opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
+We're working on it!
 
 {divider}
 {{<code/float-window>}}

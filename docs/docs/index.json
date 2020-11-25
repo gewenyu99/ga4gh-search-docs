@@ -25,21 +25,21 @@
     {
         "url": "/docs/use-exisitng-data/retrofit-a-data-explorer/doc/",
         "title": "Retrofit data explorers",
-        "content": "{row-divider}\nMSSNG Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page\n"
+        "content": "{row-divider}\nMSSNG We\u0026rsquo;re working on it!\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page\n"
     }
     
     , 
     {
         "url": "/docs/use-exisitng-data/tables-in-a-bucket/doc/",
         "title": "Tables-in-a-bucket",
-        "content": "{row-divider}\nPhenopackets example Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page\n{row-divider}\nKidsfirst FHIR example Clyde indexes the first level of the sidebar manu by looking for type: product.\nBy default, we use feather icons, and the icon renders as specified by icon: \u0026quot;icon-layers\u0026quot;\nThe example provided is consistent with this example project.\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---    The code snippet is pulled from this page\n"
+        "content": "{row-divider}\nPhenopackets example We\u0026rsquo;re working on it!\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page\n{row-divider}\nKidsfirst FHIR example We\u0026rsquo;re working on it!\n{divider}  Meta     ---title:\u0026#34;Getting Started\u0026#34;icon:\u0026#34;icon-layers\u0026#34;type :\u0026#34;product\u0026#34;---    The code snippet is pulled from this page\n"
     }
     
     , 
     {
         "url": "/docs/use-exisitng-data/using-preso/doc/",
         "title": "Using Presto",
-        "content": "{row-divider}\ndbGaP GECCO Clyde focuses on good, readable, responsive documentation. It\u0026rsquo;s side bar indexes in only 2 levels. It\u0026rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page\n"
+        "content": "{row-divider}\ndbGaP GECCO We\u0026rsquo;re working on it!\n{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page\n"
     }
     
     , 

@@ -44,7 +44,7 @@ Search API for data custodians Search API is a perfect solution for data custodi
       
       <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/retrofit-a-data-explorer/doc/</guid>
       <description>{row-divider}
-MSSNG Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
+MSSNG We&amp;rsquo;re working on it!
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page</description>
     </item>
     
@@ -55,8 +55,11 @@ MSSNG Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s 
       
       <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/tables-in-a-bucket/doc/</guid>
       <description>{row-divider}
-Phenopackets example Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
-{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page</description>
+Phenopackets example We&amp;rsquo;re working on it!
+{divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page
+{row-divider}
+Kidsfirst FHIR example We&amp;rsquo;re working on it!
+{divider}  Meta     ---title:&amp;#34;Getting Started&amp;#34;icon:&amp;#34;icon-layers&amp;#34;type :&amp;#34;product&amp;#34;---    The code snippet is pulled from this page</description>
     </item>
     
     <item>
@@ -66,7 +69,7 @@ Phenopackets example Clyde focuses on good, readable, responsive documentation. 
       
       <guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</guid>
       <description>{row-divider}
-dbGaP GECCO Clyde focuses on good, readable, responsive documentation. It&amp;rsquo;s side bar indexes in only 2 levels. It&amp;rsquo;s opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
+dbGaP GECCO We&amp;rsquo;re working on it!
 {divider}  Files     ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category |     The code snippet is pulled from this page</description>
     </item>
     

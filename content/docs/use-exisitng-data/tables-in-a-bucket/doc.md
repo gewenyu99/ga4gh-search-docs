@@ -11,7 +11,7 @@ layout: two-col
 {row-divider}
 #### Phenopackets example
 
-Clyde focuses on good, readable, responsive documentation. It's side bar indexes in only 2 levels. It's opinionated, because deeply nested manuals are hard to follow and takes much too long to navigate.
+We're working on it!
 
 {divider}
 {{<code/float-window>}}
@@ -34,12 +34,7 @@ Clyde focuses on good, readable, responsive documentation. It's side bar indexes
 {row-divider}
 
 #### Kidsfirst FHIR example
-
-Clyde indexes the first level of the sidebar manu by looking for `type: product`.
-
-By default, we use feather icons, and the icon renders as specified by `icon: "icon-layers"`
-
-The example provided is consistent with this example project.
+We're working on it!
 
 {divider}
 {{<code/float-window>}}
