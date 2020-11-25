@@ -178,5 +178,108 @@ curl --request POST \
 {{< /tabs >}}
 {{</code/float-window>}}
 
+{row-divider}
+#### More Examples
+### dbGaP GECCO Example
+This is a public implementation of Search. Feel free to follow along with the examples and explore this endpoint with your own script.
+{{< tabs tabTotal="3" tabID="3" tabName1="Python" tabName2="R" tabName3="CLI">}}
+{{% tab tabNum="1" %}}
+[Follow along in Colab](https://colab.research.google.com/drive/1f_BZibUx3nWdaJXkgcoW5WqwxnLDgzzY?usp=sharing)
+``` python
+# init search client
+from search_python_client.search import DrsClient, SearchClient
+base_url = 'https://search-presto-public.prod.dnastack.com/'
+search_client = SearchClient(base_url=base_url)
+# Find available tables
+tables_iterator = search_client.get_table_list()
+tables = list(tables_iterator)
+import pprint
+pprint.pprint(tables)
+#Get more information about a table returned
+table_info = search_client.get_table_info("dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi")
+pprint.pprint(table_info)
+# Dig into the table a little further
+table_data_iterator = search_client.get_table_data("dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi")
+# Limit to first 10 items
+tables = [next(table_data_iterator, None) for i in range(10)]
+tables = list(filter(None, tables))
+pprint.pprint(tables)
+# Select all items from the CPS-II study 
+query = """
+SELECT * 
+FROM   dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi
+WHERE  study = 'CPS-II' 
+LIMIT  5 
+"""
+# Executing the query
+table_data_iterator = search_client.search_table(query)
+for item in table_data_iterator:
+  print(item)
+```
+{{% /tab %}}
+{{% tab tabNum="2" %}}
+``` 
+Under Development
+```
+{{% /tab %}}
+{{% tab tabNum="3" %}}
+``` 
+Under Development
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+{divider}
+
+##### COVID Cloud Example
+This is a public implementation of Search. It is connected to multiple sources of data related to COVID19, such as data from [USA Facts](https://usafacts.org/issues/coronavirus/) used in this example.
+{{< tabs tabTotal="3" tabID="4" tabName1="Python" tabName2="R" tabName3="CLI">}}
+{{% tab tabNum="1" %}}
+[Follow along in Colab](https://colab.research.google.com/drive/1hnHTqquYP2HjUF0dDHn8FKiO9f7t0yGO?usp=sharing)
+``` python
+from search_python_client.search import DrsClient, SearchClient
+base_url = 'https://search-presto-public-covid19.prod.dnastack.com/'
+search_client = SearchClient(base_url=base_url)
+# Find available tables
+tables_iterator = search_client.get_table_list()
+tables = list(tables_iterator)
+import pprint
+pprint.pprint(tables)
+#Get more information about a table returned
+table_info = search_client.get_table_info("coronavirus_public.covid19_usafacts.deaths")
+pprint.pprint(table_info)
+# Dig into the table a little further
+table_data_iterator = search_client.get_table_data("coronavirus_public.covid19_usafacts.deaths")
+# Limit to first 10 items
+tables = [next(table_data_iterator, None) for i in range(10)]
+tables = list(filter(None, tables))
+pprint.pprint(tables)
+# Select all corona death cases from the state of LA, limited to 25 results and sorted by county name.
+query = """
+SELECT * 
+FROM coronavirus_public.covid19_usafacts.deaths
+WHERE state = 'LA'
+ORDER BY county_name
+LIMIT 25
+"""
+# Executing the query
+table_data_iterator = search_client.search_table(query)
+for item in table_data_iterator:
+  print(item)
+```
+{{% /tab %}}
+{{% tab tabNum="2" %}}
+``` 
+Under Development
+```
+{{% /tab %}}
+{{% tab tabNum="3" %}}
+``` 
+Under Development
+```
+{{% /tab %}}
+
+{{< /tabs >}}
 
 
