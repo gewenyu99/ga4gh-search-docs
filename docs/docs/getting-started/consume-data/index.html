@@ -80,7 +80,73 @@ This query returns all female patients from the <code>patient</code> table.</p><
 </span><span class=se></span>  --url https://search-presto-public.staging.dnastack.com/search <span class=se>\
 </span><span class=se></span>  --header <span class=s1>&#39;content-type: application/json&#39;</span> <span class=se>\
 </span><span class=se></span>  --data <span class=s1>&#39;{ &#34;query&#34;: &#34;select json_extract_scalar(ncpi_disease, &#39;</span><span class=se>\&#39;</span><span class=s1>&#39;$.code.text&#39;</span><span class=se>\&#39;</span><span class=s1>&#39;) as disease, json_extract_scalar(ncpi_disease, &#39;</span><span class=se>\&#39;</span><span class=s1>&#39;$.identifier[0].value&#39;</span><span class=se>\&#39;</span><span class=s1>&#39;) as identifier from kidsfirst.ga4gh_tables.ncpi_disease disease INNER JOIN kidsfirst.ga4gh_tables.patient patient ON patient.id=replace(json_extract_scalar(ncpi_disease, &#39;</span><span class=se>\&#39;</span><span class=s1>&#39;$.subject.reference&#39;</span><span class=se>\&#39;</span><span class=s1>&#39;), &#39;</span><span class=se>\&#39;</span><span class=s1>&#39;Patient/&#39;</span><span class=se>\&#39;</span><span class=s1>&#39;) WHERE json_extract_scalar(patient, &#39;</span><span class=se>\&#39;</span><span class=s1>&#39;$.gender&#39;</span><span class=se>\&#39;</span><span class=s1>&#39;)=&#39;</span><span class=se>\&#39;</span><span class=s1>&#39;female&#39;</span><span class=se>\&#39;</span><span class=s1>&#39; limit 5&#34;}&#39;</span>
-</code></pre></div></div></div></div></p></div></div></div></div><script src=../../../js/jquery-3.5.1.min.js></script><script src=../../../js/bootstrap.min.js></script><script src=https://unpkg.com/lunr/lunr.js></script><script>document.getElementById("scrollto").scrollIntoView(true);</script><script type=text/javascript>var idx,searchInput,searchResults=null
+</code></pre></div></div></div></div></p><p></div></div><div class=row><div class=content-area><p class=boxtext></p><h4 id=more-examples>More Examples</h4><h3 id=dbgap-gecco-example>dbGaP GECCO Example</h3><p>This is a public implementation of Search. Feel free to follow along with the examples and explore this endpoint with your own script.<nav><div class="nav nav-tabs tabs-head" role=tablist><a class="nav-item nav-link content-tab active" id=nav-3 data-toggle=tab href=#tab31 role=tab aria-controls=nav-home aria-selected=true>Python</a>
+<a class="nav-item nav-link content-tab" id=nav-3 data-toggle=tab href=#tab32 role=tab aria-controls=nav-home aria-selected=false>R</a>
+<a class="nav-item nav-link content-tab" id=nav-3 data-toggle=tab href=#tab33 role=tab aria-controls=nav-home aria-selected=false>CLI</a></div></nav><div class="tab-content scroll" id=3><div class="tab-pane fade show active" id=tab31 role=tabpanel aria-labelledby=nav-tabName1><p><a href="https://colab.research.google.com/drive/1f_BZibUx3nWdaJXkgcoW5WqwxnLDgzzY?usp=sharing">Follow along in Colab</a></p><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># init search client</span>
+<span class=kn>from</span> <span class=nn>search_python_client.search</span> <span class=kn>import</span> <span class=n>DrsClient</span><span class=p>,</span> <span class=n>SearchClient</span>
+<span class=n>base_url</span> <span class=o>=</span> <span class=s1>&#39;https://search-presto-public.prod.dnastack.com/&#39;</span>
+<span class=n>search_client</span> <span class=o>=</span> <span class=n>SearchClient</span><span class=p>(</span><span class=n>base_url</span><span class=o>=</span><span class=n>base_url</span><span class=p>)</span>
+<span class=c1># Find available tables</span>
+<span class=n>tables_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_list</span><span class=p>()</span>
+<span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=n>tables_iterator</span><span class=p>)</span>
+<span class=kn>import</span> <span class=nn>pprint</span>
+<span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
+<span class=c1>#Get more information about a table returned</span>
+<span class=n>table_info</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_info</span><span class=p>(</span><span class=s2>&#34;dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi&#34;</span><span class=p>)</span>
+<span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>table_info</span><span class=p>)</span>
+<span class=c1># Dig into the table a little further</span>
+<span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_data</span><span class=p>(</span><span class=s2>&#34;dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi&#34;</span><span class=p>)</span>
+<span class=c1># Limit to first 10 items</span>
+<span class=n>tables</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>table_data_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
+<span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=bp>None</span><span class=p>,</span> <span class=n>tables</span><span class=p>))</span>
+<span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
+<span class=c1># Select all items from the CPS-II study </span>
+<span class=n>query</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;
+</span><span class=s2>SELECT * 
+</span><span class=s2>FROM   dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi
+</span><span class=s2>WHERE  study = &#39;CPS-II&#39; 
+</span><span class=s2>LIMIT  5 
+</span><span class=s2>&#34;&#34;&#34;</span>
+<span class=c1># Executing the query</span>
+<span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>search_table</span><span class=p>(</span><span class=n>query</span><span class=p>)</span>
+<span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>table_data_iterator</span><span class=p>:</span>
+  <span class=k>print</span><span class=p>(</span><span class=n>item</span><span class=p>)</span>
+</code></pre></div></div><div class="tab-pane fade" id=tab32 role=tabpanel aria-labelledby=nav-tabName2><pre><code>Under Development
+</code></pre></div><div class="tab-pane fade" id=tab33 role=tabpanel aria-labelledby=nav-tabName3><pre><code>Under Development
+</code></pre></div></div></p><p></p></div><div class=example-area></p><h5 id=covid-cloud-example>COVID Cloud Example</h5><p>This is a public implementation of Search. It is connected to multiple sources of data related to COVID19, such as data from <a href=https://usafacts.org/issues/coronavirus/>USA Facts</a> used in this example.<nav><div class="nav nav-tabs tabs-head" role=tablist><a class="nav-item nav-link content-tab active" id=nav-4 data-toggle=tab href=#tab41 role=tab aria-controls=nav-home aria-selected=true>Python</a>
+<a class="nav-item nav-link content-tab" id=nav-4 data-toggle=tab href=#tab42 role=tab aria-controls=nav-home aria-selected=false>R</a>
+<a class="nav-item nav-link content-tab" id=nav-4 data-toggle=tab href=#tab43 role=tab aria-controls=nav-home aria-selected=false>CLI</a></div></nav><div class="tab-content scroll" id=4><div class="tab-pane fade show active" id=tab41 role=tabpanel aria-labelledby=nav-tabName1><p><a href="https://colab.research.google.com/drive/1hnHTqquYP2HjUF0dDHn8FKiO9f7t0yGO?usp=sharing">Follow along in Colab</a></p><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>search_python_client.search</span> <span class=kn>import</span> <span class=n>DrsClient</span><span class=p>,</span> <span class=n>SearchClient</span>
+<span class=n>base_url</span> <span class=o>=</span> <span class=s1>&#39;https://search-presto-public-covid19.prod.dnastack.com/&#39;</span>
+<span class=n>search_client</span> <span class=o>=</span> <span class=n>SearchClient</span><span class=p>(</span><span class=n>base_url</span><span class=o>=</span><span class=n>base_url</span><span class=p>)</span>
+<span class=c1># Find available tables</span>
+<span class=n>tables_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_list</span><span class=p>()</span>
+<span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=n>tables_iterator</span><span class=p>)</span>
+<span class=kn>import</span> <span class=nn>pprint</span>
+<span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
+<span class=c1>#Get more information about a table returned</span>
+<span class=n>table_info</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_info</span><span class=p>(</span><span class=s2>&#34;coronavirus_public.covid19_usafacts.deaths&#34;</span><span class=p>)</span>
+<span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>table_info</span><span class=p>)</span>
+<span class=c1># Dig into the table a little further</span>
+<span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_data</span><span class=p>(</span><span class=s2>&#34;coronavirus_public.covid19_usafacts.deaths&#34;</span><span class=p>)</span>
+<span class=c1># Limit to first 10 items</span>
+<span class=n>tables</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>table_data_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
+<span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=bp>None</span><span class=p>,</span> <span class=n>tables</span><span class=p>))</span>
+<span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
+<span class=c1># Select all corona death cases from the state of LA, limited to 25 results and sorted by county name.</span>
+<span class=n>query</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;
+</span><span class=s2>SELECT * 
+</span><span class=s2>FROM coronavirus_public.covid19_usafacts.deaths
+</span><span class=s2>WHERE state = &#39;LA&#39;
+</span><span class=s2>ORDER BY county_name
+</span><span class=s2>LIMIT 25
+</span><span class=s2>&#34;&#34;&#34;</span>
+<span class=c1># Executing the query</span>
+<span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>search_table</span><span class=p>(</span><span class=n>query</span><span class=p>)</span>
+<span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>table_data_iterator</span><span class=p>:</span>
+  <span class=k>print</span><span class=p>(</span><span class=n>item</span><span class=p>)</span>
+</code></pre></div></div><div class="tab-pane fade" id=tab42 role=tabpanel aria-labelledby=nav-tabName2><pre><code>Under Development
+</code></pre></div><div class="tab-pane fade" id=tab43 role=tabpanel aria-labelledby=nav-tabName3><pre><code>Under Development
+</code></pre></div></div></p></div></div></div></div><script src=../../../js/jquery-3.5.1.min.js></script><script src=../../../js/bootstrap.min.js></script><script src=https://unpkg.com/lunr/lunr.js></script><script>document.getElementById("scrollto").scrollIntoView(true);</script><script type=text/javascript>var idx,searchInput,searchResults=null
 var documents=[]
 function renderSearchResults(results){if(results.length>0){if(results.length>9){results=results.slice(0,10)}
 searchResults.innerHTML=''
