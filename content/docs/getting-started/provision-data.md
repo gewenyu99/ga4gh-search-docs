@@ -71,30 +71,30 @@ docker run --rm --name dnastack-ga4gh-search -p 8089:8089 -e PRESTO_DATASOURCE_U
 {{<code/float-window>}}
 {{< tabs tabTotal="3" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI">}}
 {{% tab tabNum="1" %}}
-``` 
+``` Python
 # init search client
 from search_python_client.search import DrsClient, SearchClient
-base_url_tiab = 'http://localhost:8089/'
-search_client_tiab = SearchClient(base_url=base_url_tiab)
+base_url = 'http://localhost:8089/'
+search_client = SearchClient(base_url=base_url)
 # get tables
-tables_iterator = search_client_tiab.get_table_list()
+tables_iterator = search_client.get_table_list()
 tables = [next(tables_iterator, None) for i in range(10)]
 tables = list(filter(None, tables))
 print(tables)
 # get table info
-table_name = tables[0]['name']
-table_info = search_client_tiab.get_table_info(table_name)
+table_name = "sample_phenopackets.ga4gh_tables.gecco_phenopackets"
+table_info = search_client.get_table_info(table_name)
 print(table_info)
 # get table data
-table_name = tables[0]['name']
-table_data_iterator = search_client_tiab.get_table_data(table_name)
+table_name = "sample_phenopackets.ga4gh_tables.gecco_phenopackets"
+table_data_iterator = search_client.get_table_data(table_name)
 table_data = [next(table_data_iterator, None) for i in range(10)]
 table_data = list(filter(None, table_data))
 print(table_data)
 ```
 {{% /tab %}}
 {{% tab tabNum="2" %}}
-``` 
+``` R
 devtools::install_github("DNAstack/ga4gh-search-client-r")
 library(httr)
 tables <- ga4gh.search::ga4gh_list_tables("http://localhost:8089")
@@ -104,8 +104,17 @@ print(tables)
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
-``` 
-place holder
+List tables
+``` bash
+search-cli list --api-url http://localhost:8089
+```
+Get table info
+``` bash
+search-cli info dbgap_demo.scr_gecco_susceptibility.sample_multi --api-url http://localhost:8089
+```
+Get table data
+``` bash
+search-cli data dbgap_demo.scr_gecco_susceptibility.sample_multi --api-url http://localhost:8089
 ```
 {{% /tab %}}
 
