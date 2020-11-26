@@ -65,9 +65,9 @@ docker pull dnastack/ga4gh-search-adapter-presto:latest
 docker run --rm --name dnastack-ga4gh-search -p 8089:8089 -e PRESTO_DATASOURCE_URL=https://presto-public.prod.dnastack.com -e SPRING_PROFILES_ACTIVE=no-auth dnastack/ga4gh-search-adapter-presto:latest
 ```
 {{% /tab %}}
-
 {{< /tabs >}}
 {{</code/float-window>}}
+
 {{<code/float-window>}}
 {{< tabs tabTotal="3" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI">}}
 {{% tab tabNum="1" %}}

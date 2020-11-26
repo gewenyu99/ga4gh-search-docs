@@ -65,6 +65,7 @@ devtools::install_github("DNAstack/ga4gh-search-client-r")
 {{% /tab %}}
 
 {{% tab tabNum="3" %}}
+**This CLI requires Java 11+ on your system**
 ``` bash
 curl https://storage.googleapis.com/ga4gh-search-cli/tables-cli-2.1-55-gc484f8b-executable.jar > search-cli
 chmod +x search-cli

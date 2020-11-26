@@ -9,9 +9,14 @@ Phenopackets example We&amp;rsquo;re working on it!
 {divider} Files ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category | The code snippet is pulled from this page
 {row-divider}
 Kidsfirst FHIR example We&amp;rsquo;re working on it!
-{divider} Meta ---title:&amp;#34;Getting Started&amp;#34;icon:&amp;#34;icon-layers&amp;#34;type :&amp;#34;product&amp;#34;--- The code snippet is pulled from this page</description></item><item><title>Using Presto</title><link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</guid><description>{row-divider}
-dbGaP GECCO We&amp;rsquo;re working on it!
-{divider} Files ├── content│ ├── category folder│ │ ├── sub-category folder│ │ │ └──_index.md│ │ └── _index.md│ ├── another category | The code snippet is pulled from this page</description></item><item><title>Provision Data</title><link>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</guid><description>{row-divider}
+{divider} Meta ---title:&amp;#34;Getting Started&amp;#34;icon:&amp;#34;icon-layers&amp;#34;type :&amp;#34;product&amp;#34;--- The code snippet is pulled from this page</description></item><item><title>Using Presto</title><link>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/use-exisitng-data/using-preso/doc/</guid><description>The dbGaP GECCO example In the provision data section, we&amp;rsquo;ve shown a quick start recipe with the ga4gh-search-adapter-presto docker container connected to a Presto instance hosted at https://presto-public.prod.dnastack.com. This section provides more information on how this was accomplished.
+Quick Links ga4gh-search-adapter-presto
+Open API 3 Reference
+Full GA4GH Search Specification
+Table Object Specification
+Search API’s SQL dialect
+Prerequisites The following is required before we start.
+Java 11+ A presto server you can access anonymously over HTTP(S).</description></item><item><title>Provision Data</title><link>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/getting-started/provision-data/</guid><description>{row-divider}
 Implementation The GA4GH API requires the table operations to be implemented to specification for basic discovery and browsing.
 Optional but not required, query operations may be implemented to support querying with SQL.
 The Search API is backend agnostic, which means any solution that implements the API Specification is valid. You can use your favorite REST application frameworks to implement GA4GH Search or write no code at all with a tables-in-a-bucket implementation.</description></item><item><title>Consume Data</title><link>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/ga4gh-search-docs/docs/getting-started/consume-data/</guid><description>{row-divider}
