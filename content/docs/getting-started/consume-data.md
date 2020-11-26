@@ -46,8 +46,15 @@ https://colab.research.google.com/drive/1VOP2IcPjsX4U-DfuiTs7Tr0SVlAD0IMh?usp=sh
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
-``` 
-place holder
+Get list of tables
+``` bash
+search-cli list --api-url https://storage.googleapis.com/ga4gh-tables-example
+```
+``` bash
+search-cli info subjects --api-url https://storage.googleapis.com/ga4gh-tables-example
+```
+``` bash
+search-cli data subjects --api-url https://storage.googleapis.com/ga4gh-tables-example
 ```
 {{% /tab %}}
 
