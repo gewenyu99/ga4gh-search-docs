@@ -198,7 +198,7 @@ Output:
 {{% tab tabNum="3" %}}
 
 ``` bash
-./dnastack-search query -q "select json_extract_scalar(ncpi_disease, '$.code.text') as disease, json_extract_scalar(ncpi_disease, '$.identifier[0].value') as identifier from kidsfirst.ga4gh_tables.ncpi_disease disease INNER JOIN kidsfirst.ga4gh_tables.patient patient ON patient.id=replace(json_extract_scalar(ncpi_disease, '$.subject.reference'), 'Patient/') WHERE json_extract_scalar(patient, '$.gender')='female' limit 5"
+search-cli query -q "select json_extract_scalar(ncpi_disease, '$.code.text') as disease, json_extract_scalar(ncpi_disease, '$.identifier[0].value') as identifier from kidsfirst.ga4gh_tables.ncpi_disease disease INNER JOIN kidsfirst.ga4gh_tables.patient patient ON patient.id=replace(json_extract_scalar(ncpi_disease, '$.subject.reference'), 'Patient/') WHERE json_extract_scalar(patient, '$.gender')='female' limit 5" --api-url https://search-presto-public.staging.dnastack.com
 ```
 {{% /tab %}}
 {{% tab tabNum="4" %}}
@@ -279,8 +279,17 @@ ga4gh.search::ga4gh_search("https://search-presto-public.prod.dnastack.com", que
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
-``` 
-Under Development
+``` bash
+search-cli list --api-url "https://search-presto-public.prod.dnastack.com" 
+```
+Get table info
+``` bash
+search-cli info dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi --api-url "https://search-presto-public.prod.dnastack.com" 
+```
+Now run a query and pipe the results to a file called `results.txt`
+``` bash
+search-cli query -q "SELECT * FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi WHERE study = 'CPS-II' LIMIT 5" \
+  --api-url "https://search-presto-public.prod.dnastack.com" > results.txt
 ```
 {{% /tab %}}
 
@@ -344,8 +353,17 @@ ga4gh.search::ga4gh_search("https://search-presto-public-covid19.prod.dnastack.c
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
-``` 
-Under Development
+``` bash
+search-cli list --api-url "https://search-presto-public-covid19.prod.dnastack.com" 
+```
+Get table info
+``` bash
+search-cli info coronavirus_public.covid19_usafacts.deaths --api-url "https://search-presto-public-covid19.prod.dnastack.com" 
+```
+Now run a query and pipe the results to a file called `results.txt`
+``` bash
+search-cli query -q "SELECT * FROM coronavirus_public.covid19_usafacts.deaths WHERE state = 'LA' ORDER BY county_name LIMIT 25" \
+  --api-url "https://search-presto-public-covid19.prod.dnastack.com" > results.txt
 ```
 {{% /tab %}}
 

@@ -65,14 +65,15 @@ devtools::install_github("DNAstack/ga4gh-search-client-r")
 {{% /tab %}}
 
 {{% tab tabNum="3" %}}
-Download [tables-api-cli-executable.jar](). Make it executable (e.g.
-`chmod +x tables-api-cli-executable.jar`)
-
-Optionally create an executable `tables` script, with contents like this:
-
-```bash
-#!/bin/bash
-/path/to/tables-api-cli-executable.jar $@
+``` bash
+curl https://storage.googleapis.com/ga4gh-search-cli/tables-cli-2.1-55-gc484f8b-executable.jar > search-cli
+chmod +x search-cli
+mv search-cli /usr/local/bin # (somewhere on your search path)
+search-cli --version
+```
+You should see:
+``` bash
+tables-api-cli Version : 1.0-0.2.1-55-gc484f8b
 ```
 {{% /tab %}}
 {{< /tabs >}}
