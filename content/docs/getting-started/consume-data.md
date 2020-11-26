@@ -12,7 +12,7 @@ description: This section provides information about setting up GA4GH Search API
 #### Browsing
 The minimum Search API implementations will support browsing by table. This means [these operations](https://gewenyu99.github.io/ga4gh-search-docs/api/#tag/tables) from the API specs are supported for table by table browsing.
 
-On the right is example code to browse [this](/docs/getting-started/provision-data/#tables-in-a-bucket-example) tablles-in-a-bucket implementation of Search.
+On the right is example code to browse [the tables-in-a-bucket](/docs/getting-started/provision-data/#tables-in-a-bucket-example) implementation of Search.
 {divider}
 {{< tabs tabTotal="3" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI">}}
 {{% tab tabNum="1" %}}

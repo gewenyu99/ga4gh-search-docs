@@ -31,9 +31,9 @@ In the [provision data section](/docs/getting-started/provision-data/), we've sh
 #### Prerequisites 
 The following is required before we start.
 1. Java 11+
-1. A presto server you can access anonymously over HTTP(S).
+1. A Presto server you can access anonymously over HTTP(S).
 1. Git
-> If you don't have a Presto server to work against, and you wish to try the app, try using `https://presto-public.prod.dnastack.com`.
+> If you don't have a Presto server to work against and you wish to try the app, try using `https://presto-public.prod.dnastack.com` as the data source.
 
 **1. Building the Presto Adapter App**
 
@@ -48,27 +48,29 @@ mvn clean package
 
 
 **2. Configuration**
+
 For a minimal configuration, we need to provide two parameters, `PRESTO_DATASOURCE_URL` and `SPRING_PROFILES_ACTIVE`.
 
-PRESTO_DATASOURCE_URL points to the Presto server you wish to expose with a Search API.
+`PRESTO_DATASOURCE_URL` points to the Presto server you wish to expose with a Search API.
 {{%content-textbox%}}
-Clone the repository
+Clone the repository:
 ``` bash
 export PRESTO_DATASOURCE_URL=https://<your-presto-server>
 export SPRING_PROFILES_ACTIVE=no-auth
 ```
-The search adapter requires a Postgres database. To start the app locally quickly with the default settings, you can spin up the database with this docker command:
+The adapter app requires a local PostgreSQL database connection. To start the app locally with the default settings, you can spin up the database with this docker command:
 ```bash
 docker run -d -p 5432:5432 --name ga4ghsearchadapterpresto -e POSTGRES_USER=ga4ghsearchadapterpresto -e POSTGRES_PASSWORD=ga4ghsearchadapterpresto postgres
 ``` 
 {{%/content-textbox%}}
 
 **3. Run the adapter app**
+
 {{%content-textbox%}}
 ``` bash
 mvn clean spring-boot:run
 ```
-Your application should be accessible at [http://localhost:8089/tables](http://localhost:8089/tables)
+Your application should now be accessible at [http://localhost:8089/tables](http://localhost:8089/tables)
 
 To test the app out, follow the [consuming data](/docs/getting-started/consume-data/) section.
 {{%/content-textbox%}}

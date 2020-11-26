@@ -11,13 +11,13 @@ layout: two-col
 {row-divider}
 #### Implementation
 
-The GA4GH API requires the [table operations](/api/#tag/tables) to be implemented to specification for basic discovery and browsing. 
+The GA4GH API requires [table operations](/api/#tag/tables) to be implemented to specification for basic discovery and browsing. 
 
 Optional but not required, [query operations](/api/#tag/search) may be implemented to support querying with SQL.
 
-The Search API is backend agnostic, which means any solution that implements the [API Specification](/api) is valid. You can use your favorite REST application frameworks to implement GA4GH Search or write no code at all with a tables-in-a-bucket implementation.
+The Search API is backend agnostic, which means any solution that implements the [API specification](/api) is valid. You can use your favorite REST application frameworks to implement GA4GH Search Endpoints or a hosted blob store for a tables-in-a-bucket implementation requiring no code.
 
-The following examples will get you started experimenting with Search.
+Checkout the following examples for some inspiration.
 {divider}
 {{<code/float-window>}}
 {{%content-textbox%}}
@@ -32,7 +32,7 @@ The following examples will get you started experimenting with Search.
 #### Tables-in-a-bucket example
 The specification allows for a no-code implementation as a collection of files served statically. This is the easiest way to start experimenting with the GA4GH Search API. As long as your storage bucket conforms to the correct file structure and it has the correct sharing permissions, it is a valid Search implementation.
 
-A concrete example implementation is [available here](https://storage.googleapis.com/ga4gh-tables-example/tables) and [try browsing this implementation](/docs/getting-started/consume-data/#browsing) here.
+A concrete example implementation is [available here](https://storage.googleapis.com/ga4gh-tables-example/tables) and [try browsing this implementation](/docs/getting-started/consume-data/#browsing) with these commands.
 
 {divider}
 {{<code/float-window>}}
@@ -53,7 +53,7 @@ This example was shown as a demo during the 2020 GA4GH Plenary. This app will ru
 
 You’ll need docker set up on your system to run the Spring app, and you’ll need to have one of the client libraries installed from the [Introduction Section](/docs/getting-started/).
 
-he Docker commands will download and start a PostgreSQL container and the reference Search implementation. If you would like to experiment with the application further, you can check out the source code and configuration options [here](https://github.com/dnastack/ga4gh-search-adapter-presto).
+Further information about this example can be found [here](/docs/use-exisitng-data/using-preso/doc/).
 {divider}
 {{<code/float-window>}}
 {{< tabs tabTotal="1" tabID="2" tabName1="30 second quick start">}}
