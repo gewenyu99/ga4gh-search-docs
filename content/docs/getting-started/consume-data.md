@@ -41,6 +41,7 @@ print(table_data)
 {{% /tab %}}
 {{% tab tabNum="2" %}}
 ``` 
+Under construction
 https://colab.research.google.com/drive/1VOP2IcPjsX4U-DfuiTs7Tr0SVlAD0IMh?usp=sharing <= doesn't work right now.
 ```
 {{% /tab %}}
@@ -65,7 +66,7 @@ The GA4GH Search API's SQL dialect has a familiar interface inspired by current 
 
 {divider}
 {{<code/float-window>}}
-{{< tabs tabTotal="2" tabID="1" tabName1="Example #1" tabName2="Example #2">}}
+{{< tabs tabTotal="2" tabID="float" tabName1="Example #1" tabName2="Example #2">}}
 {{% tab tabNum="1" %}}
 This query returns all female patients from the `patient` table.
 ``` SQL
@@ -112,7 +113,7 @@ On the right, we provide examples to consume data from the Search API using the 
 
 {divider}
 {{<code/float-window>}}
-{{< tabs tabTotal="4" tabID="2" tabName1="Python" tabName2="R" tabName3="CLI" tabName4="cURL">}}
+{{< tabs tabTotal="4" tabID="queries" tabName1="Python" tabName2="R" tabName3="CLI" tabName4="cURL">}}
 
 {{% tab tabNum="1" %}}
 [Follow Along in Google Colab](https://colab.research.google.com/drive/1efGB5O68_dtMgyqCeIjLG8ezMzDBBQj9?usp=sharing)
@@ -261,8 +262,20 @@ for item in table_data_iterator:
 ```
 {{% /tab %}}
 {{% tab tabNum="2" %}}
-``` 
-Under Development
+[Follow along in Colab](https://colab.research.google.com/drive/1X7EZ71v29iFnxbHjsc-9_0Om41xEw32m?usp=sharing)
+``` R
+# installing devtools
+dir.create(path = Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)
+install.packages("devtools", lib = Sys.getenv("R_LIBS_USER"), repos = "https://cran.rstudio.com/")
+# installing the R client
+devtools::install_github("DNAstack/ga4gh-search-client-r")
+# Making the request
+library(httr)
+ga4gh.search::ga4gh_list_tables("https://search-presto-public.prod.dnastack.com")
+# Select all items from the CPS-II study 
+query <- "SELECT * FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi WHERE study = 'CPS-II' LIMIT 5"
+# Executing the query
+ga4gh.search::ga4gh_search("https://search-presto-public.prod.dnastack.com", query)
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
@@ -313,8 +326,21 @@ for item in table_data_iterator:
 ```
 {{% /tab %}}
 {{% tab tabNum="2" %}}
-``` 
-Under Development
+[Follow along in Colab](https://colab.research.google.com/drive/1FCpiUIHSOS-qewaw5efF8T_SipR5DSZR?usp=sharing)
+``` R
+# installing devtools
+dir.create(path = Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)
+install.packages("devtools", lib = Sys.getenv("R_LIBS_USER"), repos = "https://cran.rstudio.com/")
+# installing the R client
+devtools::install_github("DNAstack/ga4gh-search-client-r")
+# Making the request
+library(httr)
+ga4gh.search::ga4gh_list_tables("https://search-presto-public-covid19.prod.dnastack.com")
+# Select all COVID death cases from the state of LA, limited to 25 results and sorted by county name.
+query <- "SELECT * FROM coronavirus_public.covid19_usafacts.deaths WHERE state = 'LA' ORDER BY county_name LIMIT 25"
+# Executing the query
+ga4gh.search::ga4gh_search("https://search-presto-public-covid19.prod.dnastack.com", query)
+
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
