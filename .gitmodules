@@ -1,6 +1,6 @@
 [submodule "themes/clyde"]
 	path = themes/clyde
-	url = git@github.com:gewenyu99/clyde.git
+	url = https://github.com/gewenyu99/clyde.git
 
 # git submodule add git@github.com:gewenyu99/clyde.git themes/clyde
 [submodule "ga4gh-search"]
