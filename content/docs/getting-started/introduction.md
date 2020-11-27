@@ -59,6 +59,8 @@ pip install git+https://github.com/DNAstack/search-python-client --no-cache-dir
 # Setup devtools
 dir.create(path = Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)
 install.packages("devtools", lib = Sys.getenv("R_LIBS_USER"), repos = "https://cran.rstudio.com/")
+```
+``` R
 # installing the R client
 devtools::install_github("DNAstack/ga4gh-search-client-r")
 ```
