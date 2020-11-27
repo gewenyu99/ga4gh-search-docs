@@ -6,16 +6,16 @@
 <span class=kn>from</span> <span class=nn>search_python_client.search</span> <span class=kn>import</span> <span class=n>DrsClient</span><span class=p>,</span> <span class=n>SearchClient</span>
 <span class=n>base_url_tiab</span> <span class=o>=</span> <span class=s1>&#39;https://storage.googleapis.com/ga4gh-tables-example/&#39;</span>
 <span class=n>search_client_tiab</span> <span class=o>=</span> <span class=n>SearchClient</span><span class=p>(</span><span class=n>base_url</span><span class=o>=</span><span class=n>base_url_tiab</span><span class=p>)</span>
-<span class=c1># get tables</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># get tables</span>
 <span class=n>tables_iterator</span> <span class=o>=</span> <span class=n>search_client_tiab</span><span class=o>.</span><span class=n>get_table_list</span><span class=p>()</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>tables_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=bp>None</span><span class=p>,</span> <span class=n>tables</span><span class=p>))</span>
 <span class=k>print</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
-<span class=c1># get table info</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># get table info</span>
 <span class=n>table_name</span> <span class=o>=</span> <span class=n>tables</span><span class=p>[</span><span class=mi>0</span><span class=p>][</span><span class=s1>&#39;name&#39;</span><span class=p>]</span>
 <span class=n>table_info</span> <span class=o>=</span> <span class=n>search_client_tiab</span><span class=o>.</span><span class=n>get_table_info</span><span class=p>(</span><span class=n>table_name</span><span class=p>)</span>
 <span class=k>print</span><span class=p>(</span><span class=n>table_info</span><span class=p>)</span>
-<span class=c1># get table data</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># get table data</span>
 <span class=n>table_name</span> <span class=o>=</span> <span class=n>tables</span><span class=p>[</span><span class=mi>0</span><span class=p>][</span><span class=s1>&#39;name&#39;</span><span class=p>]</span>
 <span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client_tiab</span><span class=o>.</span><span class=n>get_table_data</span><span class=p>(</span><span class=n>table_name</span><span class=p>)</span>
 <span class=n>table_data</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>table_data_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
@@ -112,44 +112,44 @@ This query returns all female patients from the <code>patient</code> table.</p><
 <span class=kn>from</span> <span class=nn>search_python_client.search</span> <span class=kn>import</span> <span class=n>DrsClient</span><span class=p>,</span> <span class=n>SearchClient</span>
 <span class=n>base_url</span> <span class=o>=</span> <span class=s1>&#39;https://search-presto-public.prod.dnastack.com/&#39;</span>
 <span class=n>search_client</span> <span class=o>=</span> <span class=n>SearchClient</span><span class=p>(</span><span class=n>base_url</span><span class=o>=</span><span class=n>base_url</span><span class=p>)</span>
-<span class=c1># Find available tables</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Find available tables</span>
 <span class=n>tables_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_list</span><span class=p>()</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=n>tables_iterator</span><span class=p>)</span>
 <span class=kn>import</span> <span class=nn>pprint</span>
 <span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
-<span class=c1>#Get more information about a table returned</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1>#Get more information about a table returned</span>
 <span class=n>table_info</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_info</span><span class=p>(</span><span class=s2>&#34;dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi&#34;</span><span class=p>)</span>
 <span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>table_info</span><span class=p>)</span>
-<span class=c1># Dig into the table a little further</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Dig into the table a little further</span>
 <span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_data</span><span class=p>(</span><span class=s2>&#34;dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi&#34;</span><span class=p>)</span>
-<span class=c1># Limit to first 10 items</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Limit to first 10 items</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>table_data_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=bp>None</span><span class=p>,</span> <span class=n>tables</span><span class=p>))</span>
 <span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
-<span class=c1># Select all items from the CPS-II study </span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Select all items from the CPS-II study </span>
 <span class=n>query</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;
 </span><span class=s2>SELECT * 
 </span><span class=s2>FROM   dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi
 </span><span class=s2>WHERE  study = &#39;CPS-II&#39; 
 </span><span class=s2>LIMIT  5 
 </span><span class=s2>&#34;&#34;&#34;</span>
-<span class=c1># Executing the query</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Executing the query</span>
 <span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>search_table</span><span class=p>(</span><span class=n>query</span><span class=p>)</span>
 <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>table_data_iterator</span><span class=p>:</span>
   <span class=k>print</span><span class=p>(</span><span class=n>item</span><span class=p>)</span>
 </code></pre></div></div><div class="tab-pane fade" id=tab32 role=tabpanel aria-labelledby=nav-tabName2><p><a href="https://colab.research.google.com/drive/1X7EZ71v29iFnxbHjsc-9_0Om41xEw32m?usp=sharing">Follow along in Colab</a></p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># installing devtools</span>
 <span class=nf>dir.create</span><span class=p>(</span><span class=n>path</span> <span class=o>=</span> <span class=nf>Sys.getenv</span><span class=p>(</span><span class=s>&#34;R_LIBS_USER&#34;</span><span class=p>),</span> <span class=n>showWarnings</span> <span class=o>=</span> <span class=kc>FALSE</span><span class=p>,</span> <span class=n>recursive</span> <span class=o>=</span> <span class=kc>TRUE</span><span class=p>)</span>
 <span class=nf>install.packages</span><span class=p>(</span><span class=s>&#34;devtools&#34;</span><span class=p>,</span> <span class=n>lib</span> <span class=o>=</span> <span class=nf>Sys.getenv</span><span class=p>(</span><span class=s>&#34;R_LIBS_USER&#34;</span><span class=p>),</span> <span class=n>repos</span> <span class=o>=</span> <span class=s>&#34;https://cran.rstudio.com/&#34;</span><span class=p>)</span>
-<span class=c1># installing the R client</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># installing the R client</span>
 <span class=n>devtools</span><span class=o>::</span><span class=nf>install_github</span><span class=p>(</span><span class=s>&#34;DNAstack/ga4gh-search-client-r&#34;</span><span class=p>)</span>
-<span class=c1># Making the request</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Making the request</span>
 <span class=nf>library</span><span class=p>(</span><span class=n>httr</span><span class=p>)</span>
 <span class=n>ga4gh.search</span><span class=o>::</span><span class=nf>ga4gh_list_tables</span><span class=p>(</span><span class=s>&#34;https://search-presto-public.prod.dnastack.com&#34;</span><span class=p>)</span>
-<span class=c1># Select all items from the CPS-II study </span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Select all items from the CPS-II study </span>
 <span class=n>query</span> <span class=o>&lt;-</span> <span class=s>&#34;SELECT * FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi WHERE study = &#39;CPS-II&#39; LIMIT 5&#34;</span>
-<span class=c1># Executing the query</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Executing the query</span>
 <span class=n>ga4gh.search</span><span class=o>::</span><span class=nf>ga4gh_search</span><span class=p>(</span><span class=s>&#34;https://search-presto-public.prod.dnastack.com&#34;</span><span class=p>,</span> <span class=n>query</span><span class=p>)</span>
-</code></pre></div></div><div class="tab-pane fade" id=tab33 role=tabpanel aria-labelledby=nav-tabName3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli list --api-url <span class=s2>&#34;https://search-presto-public.prod.dnastack.com&#34;</span> 
+</code></pre></div></div><div class="tab-pane fade" id=tab33 role=tabpanel aria-labelledby=nav-tabName3><p>List tables</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli list --api-url <span class=s2>&#34;https://search-presto-public.prod.dnastack.com&#34;</span> 
 </code></pre></div><p>Get table info</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli info dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi --api-url <span class=s2>&#34;https://search-presto-public.prod.dnastack.com&#34;</span> 
 </code></pre></div><p>Now run a query and pipe the results to a file called <code>results.txt</code></p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli query -q <span class=s2>&#34;SELECT * FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi WHERE study = &#39;CPS-II&#39; LIMIT 5&#34;</span> <span class=se>\
 </span><span class=se></span>  --api-url <span class=s2>&#34;https://search-presto-public.prod.dnastack.com&#34;</span> &gt; results.txt
@@ -158,21 +158,21 @@ This query returns all female patients from the <code>patient</code> table.</p><
 <a class="nav-item nav-link content-tab" id=nav-4 data-toggle=tab href=#tab43 role=tab aria-controls=nav-home aria-selected=false>CLI</a></div></nav><div class="tab-content scroll" id=4><div class="tab-pane fade show active" id=tab41 role=tabpanel aria-labelledby=nav-tabName1><p><a href="https://colab.research.google.com/drive/1hnHTqquYP2HjUF0dDHn8FKiO9f7t0yGO?usp=sharing">Follow along in Colab</a></p><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>search_python_client.search</span> <span class=kn>import</span> <span class=n>DrsClient</span><span class=p>,</span> <span class=n>SearchClient</span>
 <span class=n>base_url</span> <span class=o>=</span> <span class=s1>&#39;https://search-presto-public-covid19.prod.dnastack.com/&#39;</span>
 <span class=n>search_client</span> <span class=o>=</span> <span class=n>SearchClient</span><span class=p>(</span><span class=n>base_url</span><span class=o>=</span><span class=n>base_url</span><span class=p>)</span>
-<span class=c1># Find available tables</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Find available tables</span>
 <span class=n>tables_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_list</span><span class=p>()</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=n>tables_iterator</span><span class=p>)</span>
 <span class=kn>import</span> <span class=nn>pprint</span>
 <span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
-<span class=c1>#Get more information about a table returned</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1>#Get more information about a table returned</span>
 <span class=n>table_info</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_info</span><span class=p>(</span><span class=s2>&#34;coronavirus_public.covid19_usafacts.deaths&#34;</span><span class=p>)</span>
 <span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>table_info</span><span class=p>)</span>
-<span class=c1># Dig into the table a little further</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Dig into the table a little further</span>
 <span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_data</span><span class=p>(</span><span class=s2>&#34;coronavirus_public.covid19_usafacts.deaths&#34;</span><span class=p>)</span>
-<span class=c1># Limit to first 10 items</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Limit to first 10 items</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>table_data_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=bp>None</span><span class=p>,</span> <span class=n>tables</span><span class=p>))</span>
 <span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
-<span class=c1># Select all corona death cases from the state of LA, limited to 25 results and sorted by county name.</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Select all corona death cases from the state of LA, limited to 25 results and sorted by county name.</span>
 <span class=n>query</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;
 </span><span class=s2>SELECT * 
 </span><span class=s2>FROM coronavirus_public.covid19_usafacts.deaths
@@ -180,24 +180,24 @@ This query returns all female patients from the <code>patient</code> table.</p><
 </span><span class=s2>ORDER BY county_name
 </span><span class=s2>LIMIT 25
 </span><span class=s2>&#34;&#34;&#34;</span>
-<span class=c1># Executing the query</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># Executing the query</span>
 <span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>search_table</span><span class=p>(</span><span class=n>query</span><span class=p>)</span>
 <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>table_data_iterator</span><span class=p>:</span>
   <span class=k>print</span><span class=p>(</span><span class=n>item</span><span class=p>)</span>
 </code></pre></div></div><div class="tab-pane fade" id=tab42 role=tabpanel aria-labelledby=nav-tabName2><p><a href="https://colab.research.google.com/drive/1FCpiUIHSOS-qewaw5efF8T_SipR5DSZR?usp=sharing">Follow along in Colab</a></p><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># installing devtools</span>
 <span class=nf>dir.create</span><span class=p>(</span><span class=n>path</span> <span class=o>=</span> <span class=nf>Sys.getenv</span><span class=p>(</span><span class=s>&#34;R_LIBS_USER&#34;</span><span class=p>),</span> <span class=n>showWarnings</span> <span class=o>=</span> <span class=kc>FALSE</span><span class=p>,</span> <span class=n>recursive</span> <span class=o>=</span> <span class=kc>TRUE</span><span class=p>)</span>
 <span class=nf>install.packages</span><span class=p>(</span><span class=s>&#34;devtools&#34;</span><span class=p>,</span> <span class=n>lib</span> <span class=o>=</span> <span class=nf>Sys.getenv</span><span class=p>(</span><span class=s>&#34;R_LIBS_USER&#34;</span><span class=p>),</span> <span class=n>repos</span> <span class=o>=</span> <span class=s>&#34;https://cran.rstudio.com/&#34;</span><span class=p>)</span>
-<span class=c1># installing the R client</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># installing the R client</span>
 <span class=n>devtools</span><span class=o>::</span><span class=nf>install_github</span><span class=p>(</span><span class=s>&#34;DNAstack/ga4gh-search-client-r&#34;</span><span class=p>)</span>
-<span class=c1># Making the request</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Making the request</span>
 <span class=nf>library</span><span class=p>(</span><span class=n>httr</span><span class=p>)</span>
 <span class=n>ga4gh.search</span><span class=o>::</span><span class=nf>ga4gh_list_tables</span><span class=p>(</span><span class=s>&#34;https://search-presto-public-covid19.prod.dnastack.com&#34;</span><span class=p>)</span>
-<span class=c1># Select all COVID death cases from the state of LA, limited to 25 results and sorted by county name.</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Select all COVID death cases from the state of LA, limited to 25 results and sorted by county name.</span>
 <span class=n>query</span> <span class=o>&lt;-</span> <span class=s>&#34;SELECT * FROM coronavirus_public.covid19_usafacts.deaths WHERE state = &#39;LA&#39; ORDER BY county_name LIMIT 25&#34;</span>
-<span class=c1># Executing the query</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Executing the query</span>
 <span class=n>ga4gh.search</span><span class=o>::</span><span class=nf>ga4gh_search</span><span class=p>(</span><span class=s>&#34;https://search-presto-public-covid19.prod.dnastack.com&#34;</span><span class=p>,</span> <span class=n>query</span><span class=p>)</span>
 
-</code></pre></div></div><div class="tab-pane fade" id=tab43 role=tabpanel aria-labelledby=nav-tabName3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli list --api-url <span class=s2>&#34;https://search-presto-public-covid19.prod.dnastack.com&#34;</span> 
+</code></pre></div></div><div class="tab-pane fade" id=tab43 role=tabpanel aria-labelledby=nav-tabName3><p>List tables</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli list --api-url <span class=s2>&#34;https://search-presto-public-covid19.prod.dnastack.com&#34;</span> 
 </code></pre></div><p>Get table info</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli info coronavirus_public.covid19_usafacts.deaths --api-url <span class=s2>&#34;https://search-presto-public-covid19.prod.dnastack.com&#34;</span> 
 </code></pre></div><p>Now run a query and pipe the results to a file called <code>results.txt</code></p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli query -q <span class=s2>&#34;SELECT * FROM coronavirus_public.covid19_usafacts.deaths WHERE state = &#39;LA&#39; ORDER BY county_name LIMIT 25&#34;</span> <span class=se>\
 </span><span class=se></span>  --api-url <span class=s2>&#34;https://search-presto-public-covid19.prod.dnastack.com&#34;</span> &gt; results.txt

@@ -76,15 +76,21 @@ docker run --rm --name dnastack-ga4gh-search -p 8089:8089 -e PRESTO_DATASOURCE_U
 from search_python_client.search import DrsClient, SearchClient
 base_url = 'http://localhost:8089/'
 search_client = SearchClient(base_url=base_url)
+```
+``` python
 # get tables
 tables_iterator = search_client.get_table_list()
 tables = [next(tables_iterator, None) for i in range(10)]
 tables = list(filter(None, tables))
 print(tables)
+```
+``` python
 # get table info
 table_name = "sample_phenopackets.ga4gh_tables.gecco_phenopackets"
 table_info = search_client.get_table_info(table_name)
 print(table_info)
+```
+``` python
 # get table data
 table_name = "sample_phenopackets.ga4gh_tables.gecco_phenopackets"
 table_data_iterator = search_client.get_table_data(table_name)
@@ -95,10 +101,13 @@ print(table_data)
 {{% /tab %}}
 {{% tab tabNum="2" %}}
 ``` R
-devtools::install_github("DNAstack/ga4gh-search-client-r")
+# Fetch table list
 library(httr)
 tables <- ga4gh.search::ga4gh_list_tables("http://localhost:8089")
 print(tables)
+```
+``` R
+# Try a query
 search_result <- ga4gh.search::ga4gh_search("http://localhost:8089", "SELECT sample_phenopackets.ga4gh_tables.gecco_phenopackets")
 print(tables)
 ```

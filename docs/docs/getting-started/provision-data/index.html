@@ -10,25 +10,26 @@ docker run --rm --name dnastack-ga4gh-search -p 8089:8089 -e <span class=nv>PRES
 <span class=kn>from</span> <span class=nn>search_python_client.search</span> <span class=kn>import</span> <span class=n>DrsClient</span><span class=p>,</span> <span class=n>SearchClient</span>
 <span class=n>base_url</span> <span class=o>=</span> <span class=s1>&#39;http://localhost:8089/&#39;</span>
 <span class=n>search_client</span> <span class=o>=</span> <span class=n>SearchClient</span><span class=p>(</span><span class=n>base_url</span><span class=o>=</span><span class=n>base_url</span><span class=p>)</span>
-<span class=c1># get tables</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># get tables</span>
 <span class=n>tables_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_list</span><span class=p>()</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>tables_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
 <span class=n>tables</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=bp>None</span><span class=p>,</span> <span class=n>tables</span><span class=p>))</span>
 <span class=k>print</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
-<span class=c1># get table info</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># get table info</span>
 <span class=n>table_name</span> <span class=o>=</span> <span class=s2>&#34;sample_phenopackets.ga4gh_tables.gecco_phenopackets&#34;</span>
 <span class=n>table_info</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_info</span><span class=p>(</span><span class=n>table_name</span><span class=p>)</span>
 <span class=k>print</span><span class=p>(</span><span class=n>table_info</span><span class=p>)</span>
-<span class=c1># get table data</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># get table data</span>
 <span class=n>table_name</span> <span class=o>=</span> <span class=s2>&#34;sample_phenopackets.ga4gh_tables.gecco_phenopackets&#34;</span>
 <span class=n>table_data_iterator</span> <span class=o>=</span> <span class=n>search_client</span><span class=o>.</span><span class=n>get_table_data</span><span class=p>(</span><span class=n>table_name</span><span class=p>)</span>
 <span class=n>table_data</span> <span class=o>=</span> <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=n>table_data_iterator</span><span class=p>,</span> <span class=bp>None</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
 <span class=n>table_data</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=bp>None</span><span class=p>,</span> <span class=n>table_data</span><span class=p>))</span>
 <span class=k>print</span><span class=p>(</span><span class=n>table_data</span><span class=p>)</span>
-</code></pre></div></div><div class="tab-pane fade" id=tab22 role=tabpanel aria-labelledby=nav-tabName2><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=n>devtools</span><span class=o>::</span><span class=nf>install_github</span><span class=p>(</span><span class=s>&#34;DNAstack/ga4gh-search-client-r&#34;</span><span class=p>)</span>
+</code></pre></div></div><div class="tab-pane fade" id=tab22 role=tabpanel aria-labelledby=nav-tabName2><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Fetch table list</span>
 <span class=nf>library</span><span class=p>(</span><span class=n>httr</span><span class=p>)</span>
 <span class=n>tables</span> <span class=o>&lt;-</span> <span class=n>ga4gh.search</span><span class=o>::</span><span class=nf>ga4gh_list_tables</span><span class=p>(</span><span class=s>&#34;http://localhost:8089&#34;</span><span class=p>)</span>
 <span class=nf>print</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-R data-lang=R><span class=c1># Try a query</span>
 <span class=n>search_result</span> <span class=o>&lt;-</span> <span class=n>ga4gh.search</span><span class=o>::</span><span class=nf>ga4gh_search</span><span class=p>(</span><span class=s>&#34;http://localhost:8089&#34;</span><span class=p>,</span> <span class=s>&#34;SELECT sample_phenopackets.ga4gh_tables.gecco_phenopackets&#34;</span><span class=p>)</span>
 <span class=nf>print</span><span class=p>(</span><span class=n>tables</span><span class=p>)</span>
 </code></pre></div></div><div class="tab-pane fade" id=tab23 role=tabpanel aria-labelledby=nav-tabName3><p>List tables</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>search-cli list --api-url http://localhost:8089

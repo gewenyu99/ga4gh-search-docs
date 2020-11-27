@@ -22,15 +22,21 @@ On the right is example code to browse [the tables-in-a-bucket](/docs/getting-st
 from search_python_client.search import DrsClient, SearchClient
 base_url_tiab = 'https://storage.googleapis.com/ga4gh-tables-example/'
 search_client_tiab = SearchClient(base_url=base_url_tiab)
+```
+``` python
 # get tables
 tables_iterator = search_client_tiab.get_table_list()
 tables = [next(tables_iterator, None) for i in range(10)]
 tables = list(filter(None, tables))
 print(tables)
+```
+``` python
 # get table info
 table_name = tables[0]['name']
 table_info = search_client_tiab.get_table_info(table_name)
 print(table_info)
+```
+``` python
 # get table data
 table_name = tables[0]['name']
 table_data_iterator = search_client_tiab.get_table_data(table_name)
@@ -241,20 +247,30 @@ This is a public implementation of Search. Feel free to follow along with the ex
 from search_python_client.search import DrsClient, SearchClient
 base_url = 'https://search-presto-public.prod.dnastack.com/'
 search_client = SearchClient(base_url=base_url)
+```
+``` python
 # Find available tables
 tables_iterator = search_client.get_table_list()
 tables = list(tables_iterator)
 import pprint
 pprint.pprint(tables)
+```
+```python
 #Get more information about a table returned
 table_info = search_client.get_table_info("dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi")
 pprint.pprint(table_info)
+```
+```python
 # Dig into the table a little further
 table_data_iterator = search_client.get_table_data("dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi")
+```
+```python
 # Limit to first 10 items
 tables = [next(table_data_iterator, None) for i in range(10)]
 tables = list(filter(None, tables))
 pprint.pprint(tables)
+```
+``` python
 # Select all items from the CPS-II study 
 query = """
 SELECT * 
@@ -262,6 +278,8 @@ FROM   dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi
 WHERE  study = 'CPS-II' 
 LIMIT  5 
 """
+```
+``` python
 # Executing the query
 table_data_iterator = search_client.search_table(query)
 for item in table_data_iterator:
@@ -274,18 +292,27 @@ for item in table_data_iterator:
 # installing devtools
 dir.create(path = Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)
 install.packages("devtools", lib = Sys.getenv("R_LIBS_USER"), repos = "https://cran.rstudio.com/")
+```
+``` R
 # installing the R client
 devtools::install_github("DNAstack/ga4gh-search-client-r")
+```
+``` R
 # Making the request
 library(httr)
 ga4gh.search::ga4gh_list_tables("https://search-presto-public.prod.dnastack.com")
+```
+``` R
 # Select all items from the CPS-II study 
 query <- "SELECT * FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi WHERE study = 'CPS-II' LIMIT 5"
+```
+``` R
 # Executing the query
 ga4gh.search::ga4gh_search("https://search-presto-public.prod.dnastack.com", query)
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
+List tables
 ``` bash
 search-cli list --api-url "https://search-presto-public.prod.dnastack.com" 
 ```
@@ -313,20 +340,30 @@ This is a public implementation of Search. It is connected to multiple sources o
 from search_python_client.search import DrsClient, SearchClient
 base_url = 'https://search-presto-public-covid19.prod.dnastack.com/'
 search_client = SearchClient(base_url=base_url)
+```
+```python
 # Find available tables
 tables_iterator = search_client.get_table_list()
 tables = list(tables_iterator)
 import pprint
 pprint.pprint(tables)
+```
+```python
 #Get more information about a table returned
 table_info = search_client.get_table_info("coronavirus_public.covid19_usafacts.deaths")
 pprint.pprint(table_info)
+```
+```python
 # Dig into the table a little further
 table_data_iterator = search_client.get_table_data("coronavirus_public.covid19_usafacts.deaths")
+```
+```python
 # Limit to first 10 items
 tables = [next(table_data_iterator, None) for i in range(10)]
 tables = list(filter(None, tables))
 pprint.pprint(tables)
+```
+```python
 # Select all corona death cases from the state of LA, limited to 25 results and sorted by county name.
 query = """
 SELECT * 
@@ -335,6 +372,8 @@ WHERE state = 'LA'
 ORDER BY county_name
 LIMIT 25
 """
+```
+```python
 # Executing the query
 table_data_iterator = search_client.search_table(query)
 for item in table_data_iterator:
@@ -347,19 +386,28 @@ for item in table_data_iterator:
 # installing devtools
 dir.create(path = Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)
 install.packages("devtools", lib = Sys.getenv("R_LIBS_USER"), repos = "https://cran.rstudio.com/")
+```
+``` R
 # installing the R client
 devtools::install_github("DNAstack/ga4gh-search-client-r")
+```
+``` R
 # Making the request
 library(httr)
 ga4gh.search::ga4gh_list_tables("https://search-presto-public-covid19.prod.dnastack.com")
+```
+``` R
 # Select all COVID death cases from the state of LA, limited to 25 results and sorted by county name.
 query <- "SELECT * FROM coronavirus_public.covid19_usafacts.deaths WHERE state = 'LA' ORDER BY county_name LIMIT 25"
+```
+``` R
 # Executing the query
 ga4gh.search::ga4gh_search("https://search-presto-public-covid19.prod.dnastack.com", query)
 
 ```
 {{% /tab %}}
 {{% tab tabNum="3" %}}
+List tables
 ``` bash
 search-cli list --api-url "https://search-presto-public-covid19.prod.dnastack.com" 
 ```
