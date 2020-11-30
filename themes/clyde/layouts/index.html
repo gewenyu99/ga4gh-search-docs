@@ -1,0 +1,6 @@
+{{ define "main" }}
+    {{ with .Site.GetPage "/docs" }}
+        {{.Render}}
+    {{end}}
+{{ end }}
+

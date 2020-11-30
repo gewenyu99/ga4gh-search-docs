@@ -1,0 +1,32 @@
+dist: xenial
+sudo: required
+
+language: node_js
+node_js:
+  - "lts/*"
+
+install:
+  - wget "https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_extended_0.79.0_Linux-64bit.deb"
+  - sudo dpkg -i hugo*.deb
+
+script:
+  - hugo version # prints the Hugo version, just in case.
+  - git submodule update --init --recursive
+  - git submodule update --recursive --remote 
+  - git submodule foreach git checkout master 
+  - git submodule foreach git pull origin master 
+  - make build_search_docs
+
+env:
+  global:
+    - PRODUCTION=true
+    - HUGO_RELEASE=0.54.0
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep_history: true
+  github-token: $GITHUB_TOKEN
+  on:
+    all_branches: true
+

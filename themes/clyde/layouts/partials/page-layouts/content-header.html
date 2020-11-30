@@ -1,0 +1,28 @@
+<div class="content-header">
+    <div id="search-input-div">
+        
+
+        <button class="search-button" id="search-button" data-toggle="modal" data-target="#search-input-modal" onclick='setFocusToTextBox()'>
+            <h3 class="search-button-text">
+                <i class="icon-search search-icon"></i>
+                Find anything
+            </h3>
+        </button>
+    
+        <div class="modal search" id="search-input-modal">
+            <div id="search-input-modal" class="modal-dialog">
+                <div id="search-input-div" class="modal-content">
+                    <input id="search-input" type="text" placeholder="" name="search" autocomplete="off">
+                    <span class="focus-border"></span>
+                    <section id="search-results" class="search"></section>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="input-group mb-3" id="search-input-root">
+            <input type="text" id="search-input" class="form-control" type="text" placeholder="" aria-describedby="basic-addon1">
+            <i class="icon-search search-icon"></i>
+        </div> -->
+    </div>
+    
+</div>
