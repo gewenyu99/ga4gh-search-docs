@@ -11,6 +11,8 @@ install:
 
 script:
   - hugo version # prints the Hugo version, just in case.
+  - git submodule update --init --recursive
+  - git submodule update --recursive --remote
   - make build_search_docs
 
 env:
