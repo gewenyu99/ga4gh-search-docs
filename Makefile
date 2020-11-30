@@ -5,6 +5,7 @@ run: build_api_docs
 build_search_docs: build_api_docs
 	ls -la
 	rm -r ./docs/
+	ls -la ./ga4gh-search/docs
 	cp -r ./ga4gh-search/docs content/api
 	hugo --minify
 
