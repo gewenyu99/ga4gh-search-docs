@@ -9,6 +9,7 @@
     flex-direction: row;
     align-items: center;
     flex-shrink: 1;
+    justify-content: space-between;
     width: calc(100vw - 225px);
 }
 
@@ -188,6 +189,21 @@
     align-items: center;    
 }
 
+.content-header-nav{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: end;
+    flex-direction: row;
+    justify-content: end;
+}
+.content-header-nav-link{
+    padding: 8px;
+    color: var(--secondary);
+    font-size: 16px;
+    justify-content: center;
+}
 @media (max-width: 1400px) {
     #search-input-div {
         left: 140px;
