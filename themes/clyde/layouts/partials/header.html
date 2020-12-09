@@ -1,6 +1,6 @@
 <div class="sidebar" id="sidebar-nav">
     {{ $logo:= site.Params.logo }}
-<button id="logo-collapse-btn" onclick="(function(){document.getElementById('sidebar-nav').classList.toggle('show');document.getElementById('content').classList.toggle('showing-nav')})()" >
+    <button id="logo-collapse-btn" onclick="(function(){document.getElementById('sidebar-nav').classList.toggle('show');document.getElementById('content').classList.toggle('showing-nav')})()" >
         <img id="logo" src="{{ $logo }}" alt="{{ site.Title }}"> 
     </button>
 

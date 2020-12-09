@@ -1,5 +1,5 @@
 .sidebar-h1:hover {
-    color: var(--sidebar-primary);
+    color: inherit;
 }
 
 .sidebar-h1 {
@@ -12,7 +12,9 @@
     margin: 0px;
     color: inherit;
 }
-
+.sidebar-h2 {
+    color: inherit;
+}
 .sidebar-h2 {
     font-family: Proxima Nova;
     font-style: normal;
@@ -68,7 +70,7 @@
     display: flex !important;
     align-items: center;
     justify-content: start;
-    color: var(--grey-200);
+    color: var(--grey600);
 }
 
 .nav-link:hover{
@@ -82,13 +84,16 @@
     display: block;
 }
 
+.nav-highlight{
+    color: var(--sidebar-primary);
+}   
+
 #logo{
     margin-top: 24px;
-    margin-left: 25px;
-    height: 32px;
+    margin-left: 20px;
+    width: 32px;
     margin-bottom: 44px;
 }
-
 
 .nav-highlight{
     color: var(--sidebar-primary) !important;

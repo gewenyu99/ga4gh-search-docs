@@ -4,7 +4,8 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;    flex-direction: column;
+    display: flex;    
+    flex-direction: column;
     justify-content: stretch;
     font: lato;
 }
@@ -44,7 +45,8 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;    flex-direction: column;
+    display: flex;    
+    flex-direction: column;
     flex: 1 1 0px;
     padding-right: 36px;
     min-width: 250px;

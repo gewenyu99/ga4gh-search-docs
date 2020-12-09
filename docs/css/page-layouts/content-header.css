@@ -200,9 +200,10 @@
 }
 .content-header-nav-link{
     padding: 8px;
-    color: var(--secondary);
+    color: var(--grey800);
     font-size: 16px;
     justify-content: center;
+    font: Lato;
 }
 @media (max-width: 1400px) {
     #search-input-div {
