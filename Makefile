@@ -1,16 +1,10 @@
 run: build_api_docs
-	cp -r ga4gh-search/docs content/api
-	hugo serve -D
-
-build_search_docs: build_api_docs
-	rm -r ./docs/
-	cp -r ./ga4gh-search/docs content/api
-	hugo --minify
-
+	cd hugo && hugo serve -D
+build: build_api_docs
+	cd hugo && hugo --minify -d ../docs/ 
 build_api_docs:
-	cd ga4gh-search && npm install -g @redocly/openapi-cli && npm install -g redoc-cli && \
-		npm install -g gh-openapi-docs &&\
-		npm install -g @redocly/openapi-cli && npm install -g redoc-cli &&\
-		gh-openapi-docs
+	redoc-cli bundle spec/search-api.yaml
+	mv ./redoc-static.html ./hugo/content/api/index.html
+
 
 	
