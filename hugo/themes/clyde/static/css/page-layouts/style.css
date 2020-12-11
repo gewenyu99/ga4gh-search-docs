@@ -91,9 +91,9 @@
     background-color: var(--grey200);
     max-height: 50vh;
     min-width: 250px;
-    width: inherit;
     border-radius: 10px;
     margin-bottom: 16px;
+    width: 100%;
 }
 .example pre {
     background-color: inherit;
@@ -112,6 +112,7 @@
 .content-textbox{
     padding: 16px;
     max-height: inherit;
+    width: inherit;
 }
 
 @media (max-width: 1400px){
