@@ -1,7 +1,6 @@
 run: build_api_docs
 	cd hugo && hugo serve -D
 build: build_api_docs
-	cp README.md SEARCHSPEC.md hugo/content/specs/
 	cd hugo && hugo --minify -d ../docs/ 
 build_api_docs:
 	redoc-cli bundle spec/search-api.yaml
